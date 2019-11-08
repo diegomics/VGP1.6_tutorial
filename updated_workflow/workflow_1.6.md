@@ -1,3 +1,7 @@
+NEW VERSION
+===========
+###### The idea is to use the old as a backbone, so I will start adding things to this
+
 # fArcCen1 Assembly Tutorial
 
 This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/]) `fArcCen1`. It covers 

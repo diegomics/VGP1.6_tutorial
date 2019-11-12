@@ -461,4 +461,24 @@ The final output should look like this:
 
 ## Step 5. Arrow Polishing
 
+Arrow uses PacBio sequences (`subreads.bam`) to polish the scaffolds.
+
+Inputs: 
+- PacBio sequences (`subreads.bam`) 
+- s4.fasta.gz
+
+Copy the `Scaffold 5 Arrow Polish 2019-Sep-14` workflow into your project.The workflow performs the following steps:
+1. Align the PacBio reads to the assembly using Minimap2.
+2. Polish scaffolds using Arrow.
+
+For configuring the inputs, select as follows:
+* Add the PacBio data (`genomic_data/pacbio/*subreads.bam`, no `scraps.bam`!)
+* Add s4.fasta.gz
+
+After running the workflow:
+- rename the output file in folder `polished_output/*_s4.arrow.fasta.gz` to `_t1.fasta.gz` and move it into the intermediates folder 
+- generate assembly statistics with the tool `asm-stats` 
+- export the data using the tool `DNAnexus to VGP S3 Exporter`
+
+
 ## Step 6. Freebayes Polishing

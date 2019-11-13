@@ -255,7 +255,7 @@ fArcCen1
 
 ```
 
-The "unzip_stage_5" folder contains the primary assembly (`cns_p_ctg.fasta.gz`) and the haplotype assembly 
+The `unzip_stage_5` folder contains the primary assembly (`cns_p_ctg.fasta.gz`) and the haplotype assembly 
 (`cns_h_ctg.fasta.gz`) which will be used in the scaffolding workflow.
 
 ## Scaffolding

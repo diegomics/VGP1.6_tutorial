@@ -26,48 +26,47 @@ The root folder of the project will have the _Species ID_ name (_fArcCen1_) and 
 ```
 fArcCen1
 └── genomic_data
-   ├── 10x
-   │   ├── fArcCen1_S1_L001_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L001_R1_001.fastq.gz
-   │   ├── fArcCen1_S1_L001_R2_001.fastq.gz
-   │   ├── fArcCen1_S1_L002_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L002_R1_001.fastq.gz
-   │   ├── fArcCen1_S1_L002_R2_001.fastq.gz
-   │   ├── fArcCen1_S1_L003_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L003_R1_001.fastq.gz
-   │   ├── fArcCen1_S1_L003_R2_001.fastq.gz
-   │   ├── fArcCen1_S1_L004_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L004_R1_001.fastq.gz
-   │   └── fArcCen1_S1_L004_R2_001.fastq.gz
-   ├── bionano
-   │  ├── fArcCen1_Saphyr_DLE-1.cmap.gz
-   │  ├── fArcCen1_Saphyr_DLE-1_1265239.bnx.gz
-   │  └── fArcCen1_Saphyr_DLE-1_1265240.bnx.gz
-   ├── pacbio
-   │   ├── m54062_170721_074508.subreads.bam
-   │   ├── m54062_170721_175442.subreads.bam
-   │   ├── m54062_170722_040411.subreads.bam
-   │   ├── m54062_170809_134833.subreads.bam
-   │   ├── m54062_170809_234737.subreads.bam
-   │   ├── m54142_170706_115228.subreads.bam
-   │   ├── m54142_170707_122532.subreads.bam
-   │   ├── m54142_170711_151050.subreads.bam
-   │   ├── m54142_170712_212934.subreads.bam
-   │   ├── m54142_170810_135956.subreads.bam
-   │   ├── m54142_170810_235924.subreads.bam
-   │   ├── m54144_170808_141859.subreads.bam
-   │   ├── m54144_170809_001755.subreads.bam
-   │   ├── m54144_170811_141157.subreads.bam
-   │   ├── m54144_170812_001052.subreads.bam
-   │   ├── m54144_170817_111904.subreads.bam
-   │   ├── m54144_170817_211802.subreads.bam
-   │   └── m54144_170818_072740.subreads.bam 
-   └── phase (or arima)
-       ├── fArcCen1_DDHiC_R1.fastq.gz
-       ├── fArcCen1_DDHiC_R2.fastq.gz
-       ├── fArcCen1_S3HiC_R1.fastq.gz
-       └── fArcCen1_S3HiC_R2.fastq.gz
-
+    ├── 10x
+    │   ├── fArcCen1_S1_L001_I1_001.fastq.gz
+    │   ├── fArcCen1_S1_L001_R1_001.fastq.gz
+    │   ├── fArcCen1_S1_L001_R2_001.fastq.gz
+    │   ├── fArcCen1_S1_L002_I1_001.fastq.gz
+    │   ├── fArcCen1_S1_L002_R1_001.fastq.gz
+    │   ├── fArcCen1_S1_L002_R2_001.fastq.gz
+    │   ├── fArcCen1_S1_L003_I1_001.fastq.gz
+    │   ├── fArcCen1_S1_L003_R1_001.fastq.gz
+    │   ├── fArcCen1_S1_L003_R2_001.fastq.gz
+    │   ├── fArcCen1_S1_L004_I1_001.fastq.gz
+    │   ├── fArcCen1_S1_L004_R1_001.fastq.gz
+    │   └── fArcCen1_S1_L004_R2_001.fastq.gz
+    ├── bionano
+    │   ├── fArcCen1_Saphyr_DLE-1.cmap.gz
+    │   ├── fArcCen1_Saphyr_DLE-1_1265239.bnx.gz
+    │   └── fArcCen1_Saphyr_DLE-1_1265240.bnx.gz
+    ├── pacbio
+    │   ├── m54062_170721_074508.subreads.bam
+    │   ├── m54062_170721_175442.subreads.bam
+    │   ├── m54062_170722_040411.subreads.bam
+    │   ├── m54062_170809_134833.subreads.bam
+    │   ├── m54062_170809_234737.subreads.bam
+    │   ├── m54142_170706_115228.subreads.bam
+    │   ├── m54142_170707_122532.subreads.bam
+    │   ├── m54142_170711_151050.subreads.bam
+    │   ├── m54142_170712_212934.subreads.bam
+    │   ├── m54142_170810_135956.subreads.bam
+    │   ├── m54142_170810_235924.subreads.bam
+    │   ├── m54144_170808_141859.subreads.bam
+    │   ├── m54144_170809_001755.subreads.bam
+    │   ├── m54144_170811_141157.subreads.bam
+    │   ├── m54144_170812_001052.subreads.bam
+    │   ├── m54144_170817_111904.subreads.bam
+    │   ├── m54144_170817_211802.subreads.bam
+    │   └── m54144_170818_072740.subreads.bam 
+    └── phase (or arima)
+        ├── fArcCen1_DDHiC_R1.fastq.gz
+        ├── fArcCen1_DDHiC_R2.fastq.gz
+        ├── fArcCen1_S3HiC_R1.fastq.gz
+        └── fArcCen1_S3HiC_R2.fastq.gz
 
 
 ```
@@ -81,7 +80,7 @@ This includes raw data from 4 data types:
 
 
 
-To make sure the project is configured correctly, navigate to the `Settings` tab of the project. In addition to the project name (_**fArcCen1**_), the following fields should be configured as such:
+To make sure the project is configured correctly, navigate to the "Settings" tab of the project. In addition to the project name (_**fArcCen1**_), the following fields should be configured as such:
 
 ```
 Billed To: org-erich_lab
@@ -122,8 +121,8 @@ Genomics reads (check at the end of this section about how to run the _Genomesco
 
 In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, 
 select `Set Output Folder`. Create a new folder with the name `assembly_vgp_standard_1.6` and select this as the output folder 
-for the `Falcon and Unzip Assembly Workflow`. All of the output folders for the individual stages should already be 
-configured. When the analysis is complete, there will be a total of 10 subdirecories in your specified output directory, 
+for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be 
+configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, 
 one for each stage of the workflow:
 
 1. BAM to FASTA (bam_to_fasta)
@@ -138,7 +137,7 @@ one for each stage of the workflow:
 10. FALCON Unzip stage 5 (unzip_stage_5)
 
 The workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including 
-input specification) by selecting `Workflow Actions` and selecting `Update Workflow With Changes`. This will make it 
+input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it 
  easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch 
  the workflow.
 
@@ -146,115 +145,117 @@ input specification) by selecting `Workflow Actions` and selecting `Update Workf
 ![Click the Run as Analysis button to launch the workflow.](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/RunAsAnalysisGo.png)
 
 Should any failures occur, the workflow can be restarted from the point of failure by navigating to the "Monitor" tab of
- the project and selecting the launched Falcon and Unzip Assembly analysis. There you can select the "Rerun As Analysis" 
+ the project and selecting the launched **vgp_falcon_and_unzip_assembly_workflow**. There you can select the `Rerun As Analysis` 
  button. Be sure to wait while all inputs and links populate before making any changes to the analysis parameters.
 
 The final output should look like this:
 ```
-assembly_vgp_standard_1.6
-├── bam_to_fasta
+fArcCen1
+└── assembly_vgp_standard_1.6
+│   ├── bam_to_fasta
 │   ├── m#####_######_######.subreads.fasta.gz
 │   ├── m#####_######_######.subreads.fasta.gz
 │   ├── m#####_######_######.subreads.fasta.gz
 │   └── ...
-├── stage_0
+│   ├── stage_0
 │   ├── read_counts.csv
 │   └── read_length_distribution.pdf
-├── stage_1
-│   ├── genome_scope
+│   ├── stage_1
+│   │   ├── genome_scope
 │   │   ├── mer_counts.csv
 │   │   ├── mer_counts.gs.log.png
 │   │   ├── mer_counts.gs.png
 │   │   ├── mer_counts.model.txt
 │   │   ├── mer_counts.progress.txt
-│   │   └── mer_counts.summary.txt
-│   ├── out.####.fasta.gz
-│   ├── out.####.fasta.gz
-│   ├── out.####.fasta.gz
-│   ├── out.####.fasta.gz
-│   ├── out.####.fasta.gz
-│   ├── ...
-│   ├── preads_rep.tar.gz
-│   ├── preads_tan.tar.gz
-│   ├── raw_reads.###.las
-│   ├── raw_reads.###.las
-│   ├── raw_reads.###.las
-│   ├── raw_reads.###.las
-│   ├── ...
-│   ├── raw_reads_rep.tar.gz
-│   ├── raw_reads_tan.tar.gz
-│   ├── read_counts.csv
-│   └── read_length_distribution.pdf
-├── stage_2
-│   ├── preads.###.las
-│   ├── preads.###.las
-│   ├── preads.###.las
-│   └── ...
-├── stage_3
-│   ├── a_ctg.fasta.gz
-│   ├── a_ctg_tiling_path.gz
-│   ├── asm.gfa.gz
-│   ├── asm.gfa2.gz
-│   ├── contig.gfa2.gz
-│   ├── ctg_paths.gz
-│   ├── p_ctg.fasta.gz
-│   ├── p_ctg_tiling_path.gz
-│   ├── preads4falcon.fasta.gz
-│   ├── read_counts.csv
-│   ├── read_length_distribution.pdf
-│   ├── sg.gfa.gz
-│   ├── sg.gfa2.gz
-│   ├── sg_edges_list.gz
-│   └── utg_data.gz
-├── unzip_stage_1
-│   ├── ctg_list
-│   ├── pread_ids.gz
-│   ├── pread_to_contigs.gz
-│   ├── rawread_ids.gz
-│   ├── rawread_to_contigs.gz
-│   ├── read_to_contig_map.gz
-│   ├── reads_fastas_##.tar.gz
-│   ├── reads_fastas_##.tar.gz
-│   ├── reads_fastas_##.tar.gz
-│   ├── reads_fastas_##.tar.gz
-│   ├── ...
-│   ├── ref_fastas_###.tar.gz
-│   ├── ref_fastas_###.tar.gz
-│   ├── ref_fastas_###.tar.gz
-│   └── ...
-├── unzip_stage_2
-│   ├── all_phased_reads.gz
-│   ├── rid_to_phase.###.tar.gz
-│   ├── rid_to_phase.###.tar.gz
-│   ├── rid_to_phase.###.tar.gz
-│   ├── rid_to_phase.###.tar.gz
-│   ├── rid_to_phase.###.tar.gz
-│   ├── rid_to_phase.###.tar.gz
-|   └── ...
-├── unzip_stage_3
-│   ├── all_h_ctg.fa.gz
-│   ├── all_h_ctg_edges.gz
-│   ├── all_h_ctg_ids.gz
-│   ├── all_p_ctg.fa.gz
-│   ├── all_p_ctg_edges.gz
-│   ├── asm.gfa.gz
-│   └── sg.gfa.gz
-├── unzip_stage_4
-│   ├── contig_groups.json
-│   ├── mappedread_###.tar.gz
-│   ├── mappedread_###.tar.gz
-│   ├── mappedread_###.tar.gz
-│   ├── mappedread_###.tar.gz
-│   └── ...
-└── unzip_stage_5
-    ├── cns_h_ctg.fasta.gz
-    ├── cns_h_ctg.fastq.gz
-    ├── cns_p_ctg.fasta.gz
-    └── cns_p_ctg.fastq.gz
+│   │   ├── mer_counts.summary.txt
+│   │   ├── out.####.fasta.gz
+│   │   ├── out.####.fasta.gz
+│   │   ├── out.####.fasta.gz
+│   │   ├── out.####.fasta.gz
+│   │   ├── out.####.fasta.gz
+│   │   ├── ...
+│   │   ├── preads_rep.tar.gz
+│   │   ├── preads_tan.tar.gz
+│   │   ├── raw_reads.###.las
+│   │   ├── raw_reads.###.las
+│   │   ├── raw_reads.###.las
+│   │   ├── raw_reads.###.las
+│   │   ├── ...
+│   │   ├── raw_reads_rep.tar.gz
+│   │   ├── raw_reads_tan.tar.gz
+│   │   │   └── read_counts.csv
+│   │   └── read_length_distribution.pdf
+│   ├── stage_2
+│   │   ├── preads.###.las
+│   │   ├── preads.###.las
+│   │   ├── preads.###.las
+│   │   └── ...
+│   ├── stage_3
+│   │   ├── a_ctg.fasta.gz
+│   │   ├── a_ctg_tiling_path.gz
+│   │   ├── asm.gfa.gz
+│   │   ├── asm.gfa2.gz
+│   │   ├── contig.gfa2.gz
+│   │   ├── ctg_paths.gz
+│   │   ├── p_ctg.fasta.gz
+│   │   ├── p_ctg_tiling_path.gz
+│   │   ├── preads4falcon.fasta.gz
+│   │   ├── read_counts.csv
+│   │   ├── read_length_distribution.pdf
+│   │   ├── sg.gfa.gz
+│   │   ├── sg.gfa2.gz
+│   │   ├── sg_edges_list.gz
+│   │   └── utg_data.gz
+│   ├── unzip_stage_1
+│   │   ├── ctg_list
+│   │   ├── pread_ids.gz
+│   │   ├── pread_to_contigs.gz
+│   │   ├── rawread_ids.gz
+│   │   ├── rawread_to_contigs.gz
+│   │   ├── read_to_contig_map.gz
+│   │   ├── reads_fastas_##.tar.gz
+│   │   ├── reads_fastas_##.tar.gz
+│   │   ├── reads_fastas_##.tar.gz
+│   │   ├── reads_fastas_##.tar.gz
+│   │   ├── ...
+│   │   ├── ref_fastas_###.tar.gz
+│   │   ├── ref_fastas_###.tar.gz
+│   │   ├── ref_fastas_###.tar.gz
+│   │   └── ...
+│   ├── unzip_stage_2
+│   │   ├── all_phased_reads.gz
+│   │   ├── rid_to_phase.###.tar.gz
+│   │   ├── rid_to_phase.###.tar.gz
+│   │   ├── rid_to_phase.###.tar.gz
+│   │   ├── rid_to_phase.###.tar.gz
+│   │   ├── rid_to_phase.###.tar.gz
+│   │   ├── rid_to_phase.###.tar.gz
+│   │   └── ...
+│   ├── unzip_stage_3
+│   │   ├── all_h_ctg.fa.gz
+│   │   ├── all_h_ctg_edges.gz
+│   │   ├── all_h_ctg_ids.gz
+│   │   ├── all_p_ctg.fa.gz
+│   │   ├── all_p_ctg_edges.gz
+│   │   ├── asm.gfa.gz
+│   │   └── sg.gfa.gz
+│   ├── unzip_stage_4
+│   │   ├── contig_groups.json
+│   │   ├── mappedread_###.tar.gz
+│   │   ├── mappedread_###.tar.gz
+│   │   ├── mappedread_###.tar.gz
+│   │   ├── mappedread_###.tar.gz
+│   │   └── ...
+│   └── unzip_stage_5
+│       ├── cns_h_ctg.fasta.gz
+│       ├── cns_h_ctg.fastq.gz
+│       ├── cns_p_ctg.fasta.gz
+│       └── cns_p_ctg.fastq.gz
+└── genomic_data
 
 ```
 
-The "unzip_stage_5" directory contains the primary assembly (`cns_p_ctg.fasta.gz`) and the haplotype assembly 
+The "unzip_stage_5" folder contains the primary assembly (`cns_p_ctg.fasta.gz`) and the haplotype assembly 
 (`cns_h_ctg.fasta.gz`) which will be used in the scaffolding workflow.
 
 ## Scaffolding
@@ -295,9 +296,9 @@ If the histogram is bimodal, select the cutoffs as follows:
 
 Once you've determined the appropriate cutoffs, select the `Purge Haplotigs Part 2` workflow. Specify the file inputs as
 follows:
-* `Reference Genome`: "renamed" reference genome from the "scaffolding/purge_haplotigs" directory (`cns_p_ctg.renamed.fasta.gz`)
-* `Alignment`: merged mapping output file from the "scaffolding/purge_haplotigs" directory (`m54.bam`)
-* `Genome Coverage`: The `*.gencov` output file from the "scaffolding/purge_haplotigs" directory (`cns_p_ctg.renamed.gencov`)
+* `Reference Genome`: "renamed" reference genome from the "scaffolding/purge_haplotigs" folder (`cns_p_ctg.renamed.fasta.gz`)
+* `Alignment`: merged mapping output file from the "scaffolding/purge_haplotigs" folder (`m54.bam`)
+* `Genome Coverage`: The `*.gencov` output file from the "scaffolding/purge_haplotigs" folder (`cns_p_ctg.renamed.gencov`)
 
 In addition, click the gear icon to the right of the app to open the parameters panel and specify the cutoffs. For 
 `fArcCen1`, we've chosen the following cutoffs: Low = 10, Mid = 48, High = 185.
@@ -311,25 +312,25 @@ The final output should look like this:
 ```
 scaffolding
 └── purge_haplotigs
-    ├── mapped_reads
-    │   ├── cns_p_ctg.renamed.mmi
-    │   ├── m#####_######_######.subreads.mapped.bam
-    │   ├── m#####_######_######.subreads.mapped.bam.bai
-    │   ├── ...
-    │   └── ...
-    ├── cns_p_ctg.renamed.coverage_histo.pdf
-    ├── cns_p_ctg.renamed.fasta.gz
-    ├── cns_p_ctg.renamed.gencov
-    ├── cns_p_ctg.renamed_coverage_stats.csv.gz
-    ├── curated.artefacts.fasta.gz
-    ├── curated.contig_associations.log
-    ├── curated.fasta.gz
-    ├── curated.haplotigs.fasta.gz
-    ├── curated.reassignments.tsv
-    ├── dotplots_reassigned_contigs.tar.gz
-    ├── dotplots_unassigned_contigs.tar.gz
-    ├── m54.bam
-    └── m54.bam.bai
+     ├── mapped_reads
+     │    ├── cns_p_ctg.renamed.mmi
+     │    ├── m#####_######_######.subreads.mapped.bam
+     │    ├── m#####_######_######.subreads.mapped.bam.bai
+     │    ├── ...
+     │    └── ...
+     ├── cns_p_ctg.renamed.coverage_histo.pdf
+     ├── cns_p_ctg.renamed.fasta.gz
+     ├── cns_p_ctg.renamed.gencov
+     ├── cns_p_ctg.renamed_coverage_stats.csv.gz
+     ├── curated.artefacts.fasta.gz
+     ├── curated.contig_associations.log
+     ├── curated.fasta.gz
+     ├── curated.haplotigs.fasta.gz
+     ├── curated.reassignments.tsv
+     ├── dotplots_reassigned_contigs.tar.gz
+     ├── dotplots_unassigned_contigs.tar.gz
+     ├── m54.bam
+     └── m54.bam.bai
 ```
 
 In this output, the primary contigs are contained in `curated.fasta.gz` and the purged haplotigs are contained in 
@@ -338,7 +339,7 @@ In this output, the primary contigs are contained in `curated.fasta.gz` and the 
 ## 2. Scaff10x Workflow
 
 The Scaff10x workflow performs two rounds of scaffolding with Scaff10x using the 10X Genomics raw reads. Copy the 
-`Scaff10x 2 Rounds` workflow from the `VGP Tools` directory.
+`Scaff10x 2 Rounds` workflow from the `VGP Tools` folder.
 
 Select the file inputs for the first step of the workflow:
 * assemble_genome_fastagz: This should be the _purged_ primary contigs from Purge Haplotigs (`curated.fasta.gz`)
@@ -356,13 +357,13 @@ The final output of scaff10x should look like this:
 ```
 scaffolding/scaff10x/
 ├── round1
-│   ├── read-BC_1.fastq.gz
-│   ├── read-BC_2.fastq.gz
-│   └── scaffolds.fasta.gz
+│    ├── read-BC_1.fastq.gz
+│    ├── read-BC_2.fastq.gz
+│    └── scaffolds.fasta.gz
 └── round2
-    ├── read-BC_1.fastq.gz
-    ├── read-BC_2.fastq.gz
-    └── scaffolds.fasta.gz
+     ├── read-BC_1.fastq.gz
+     ├── read-BC_2.fastq.gz
+     └── scaffolds.fasta.gz
 ```
 
 The output under `round2/scaffolds.fasta.gz` corresponds to `fArcCen1_s1.fasta.gz` using the VGP naming convention.
@@ -430,7 +431,7 @@ Supply the inputs `UNSCAFFOLDED` and `SCAFFOLD_FINAL_NCBI` to the app as well as
 ## Step 4. Salsa Scaffolding
 
 Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data:
-It will be located under the "genomic_data" directory with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
+It will be located under the "genomic_data" folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
 ```
 genomic_data/phase
 ├── fArcCen1_DDHiC_R1.fastq.gz

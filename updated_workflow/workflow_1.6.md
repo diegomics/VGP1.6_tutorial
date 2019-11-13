@@ -16,7 +16,7 @@ This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://v
 
 When assigned an assembly, you will given a species ID for your given genome (in this example `fArcCen1`, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
 
-The root folder of the project will have the Species ID name (`fArcCen1`) and contain the following folders and files:
+The root folder of the project will have the ***Species ID*** name (`fArcCen1`) and contain the following folders and files:
 
 ```
 fArcCen1
@@ -90,7 +90,7 @@ Note: All work should be done in the project shared with you. Do **not** create 
 
 ## Falcon and Unzip Assembly
 
-Click the green button **+ Add Data**  and search and select **VGP Tools** in the `Other Project` tab. Select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow is been copied to the current location of your working project.
+Click the green button `+ Add Data`  and search and select **VGP Tools** in the `Other Project` tab. Select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow is been copied to the current location of your working project.
 
 In your working project, click the workflow to open it in `Run` mode. Look through the workflow to make sure all instances and inputs are configured correctly.
 
@@ -109,7 +109,7 @@ Once the workflow is configured, select the `BAM Files` input under the `BAM to 
 
 Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the parameters panel and fill in the 
 `Genome Size` parameter with the given species' expected genome size. For `fArcCen1`, the estimated genome size is 
-0.99Gbp, so we fill in `0.99G`. The genome size can be obtained from the [Animal Genome Size Database](http://www.genomesize.com/) or if the species is no available there, can also be estimated by running `Jellyfish and Genomescope` on the raw 10x 
+0.99Gbp, so we fill in `0.99G`. The genome size can be obtained from the [Animal Genome Size Database](http://www.genomesize.com/) or if the species is no available there, can also be estimated by running `Jellyfish and GenomeScope` on the raw 10x 
 Genomics reads (check at the end of this section about how to run the Genomescope workflow).
 
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)

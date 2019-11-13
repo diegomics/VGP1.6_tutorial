@@ -4,27 +4,41 @@ NEW VERSION
 
 
 
+
 # fArcCen1 Assembly Tutorial
 
-This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/]) `fArcCen1`. It covers 
-some of the workflows and best practices for running your own VGP assembly.
+This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/) `fArcCen1`. The overall workflow can be depicted in the following chart:
+
+![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/2019_0731_VGP_Pipeline_1.6.png)
 
 ## Getting Started
 
 When assigned an assembly, you will given a species ID for your given genome 
-(in this example `fArcCen1`) and a project will be shared with you containing 
+(in this example `fArcCen1`, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing 
 the raw files for the genome which have been linked from the VGP AWS bucket.
 
-The project will have the Species ID name (`fArcCen1`) and contain the following files:
+The root folder of the project will have the Species ID name (`fArcCen1`) and contain the following folders and files:
 
 ```
-.
+fArcCen1
 └── genomic_data
-   ├── phase (or arima)
-   │   ├── fArcCen1_DDHiC_R1.fastq.gz
-   │   ├── fArcCen1_DDHiC_R2.fastq.gz
-   │   ├── fArcCen1_S3HiC_R1.fastq.gz
-   │   └── fArcCen1_S3HiC_R2.fastq.gz
+   ├── 10x
+   │   ├── fArcCen1_S1_L001_I1_001.fastq.gz
+   │   ├── fArcCen1_S1_L001_R1_001.fastq.gz
+   │   ├── fArcCen1_S1_L001_R2_001.fastq.gz
+   │   ├── fArcCen1_S1_L002_I1_001.fastq.gz
+   │   ├── fArcCen1_S1_L002_R1_001.fastq.gz
+   │   ├── fArcCen1_S1_L002_R2_001.fastq.gz
+   │   ├── fArcCen1_S1_L003_I1_001.fastq.gz
+   │   ├── fArcCen1_S1_L003_R1_001.fastq.gz
+   │   ├── fArcCen1_S1_L003_R2_001.fastq.gz
+   │   ├── fArcCen1_S1_L004_I1_001.fastq.gz
+   │   ├── fArcCen1_S1_L004_R1_001.fastq.gz
+   │   └── fArcCen1_S1_L004_R2_001.fastq.gz
+   ├── bionano
+   │  ├── fArcCen1_Saphyr_DLE-1.cmap.gz
+   │  ├── fArcCen1_Saphyr_DLE-1_1265239.bnx.gz
+   │  └── fArcCen1_Saphyr_DLE-1_1265240.bnx.gz
    ├── pacbio
    │   ├── m54062_170721_074508.subreads.bam
    │   ├── m54062_170721_175442.subreads.bam
@@ -43,24 +57,15 @@ The project will have the Species ID name (`fArcCen1`) and contain the following
    │   ├── m54144_170812_001052.subreads.bam
    │   ├── m54144_170817_111904.subreads.bam
    │   ├── m54144_170817_211802.subreads.bam
-   │   └── m54144_170818_072740.subreads.bam
-   ├── 10x
-   │   ├── fArcCen1_S1_L001_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L001_R1_001.fastq.gz
-   │   ├── fArcCen1_S1_L001_R2_001.fastq.gz
-   │   ├── fArcCen1_S1_L002_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L002_R1_001.fastq.gz
-   │   ├── fArcCen1_S1_L002_R2_001.fastq.gz
-   │   ├── fArcCen1_S1_L003_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L003_R1_001.fastq.gz
-   │   ├── fArcCen1_S1_L003_R2_001.fastq.gz
-   │   ├── fArcCen1_S1_L004_I1_001.fastq.gz
-   │   ├── fArcCen1_S1_L004_R1_001.fastq.gz
-   │   └── fArcCen1_S1_L004_R2_001.fastq.gz
-   └── bionano
-       ├── fArcCen1_Saphyr_DLE-1.cmap.gz
-       ├── fArcCen1_Saphyr_DLE-1_1265239.bnx.gz
-       └── fArcCen1_Saphyr_DLE-1_1265240.bnx.gz
+   │   └── m54144_170818_072740.subreads.bam 
+   └── phase (or arima)
+       ├── fArcCen1_DDHiC_R1.fastq.gz
+       ├── fArcCen1_DDHiC_R2.fastq.gz
+       ├── fArcCen1_S3HiC_R1.fastq.gz
+       └── fArcCen1_S3HiC_R2.fastq.gz
+
+
+
 ```
 
 This includes raw data from 4 data types:
@@ -111,7 +116,7 @@ Genomics reads.
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
 
 In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, 
-select `Set Output Folder`. Create a new folder with the name `assembly_version1.5` and select this as the output folder 
+select `Set Output Folder`. Create a new folder with the name `assembly_version1.6` and select this as the output folder 
 for the `Falcon and Unzip Assembly Workflow`. All of the output folders for the individual stages should already be 
 configured. When the analysis is complete, there will be a total of 10 subdirecories in your specified output directory, 
 one for each stage of the workflow:
@@ -141,7 +146,7 @@ Should any failures occur, the workflow can be restarted from the point of failu
 
 The final output should look like this:
 ```
-assembly_v1.5
+assembly_vgp_standard_1.6
 ├── bam_to_fasta
 │   ├── m#####_######_######.subreads.fasta.gz
 │   ├── m#####_######_######.subreads.fasta.gz
@@ -258,10 +263,10 @@ The Purge Haplotigs step consists of two stages:
 From the `VGP Tools` project, copy the `Purge Haplotigs Part 1` and `Purge Haplotigs Part 2` workflows to your working 
 project. In the `fArcCen1` working project, select the `Purge Haplotigs Part 1` workflow.
 
-Under the `Rename Contigs` stage, select the `*.fasta` input file by navigating to `assembly_v1.5/unzip_stage_5` and 
+Under the `Rename Contigs` stage, select the `*.fasta` input file by navigating to `assembly_vgp_standard_1.6/unzip_stage_5` and 
 selecting the file `cns_p_ctg.fasta.gz`. This represents the primary unzipped assembly.
 
-Under the `Minimap2` stage, provide the *raw* PacBio FASTA files as input by navigating to `assembly_v1.5/bam_to_fasta` 
+Under the `Minimap2` stage, provide the *raw* PacBio FASTA files as input by navigating to `assembly_vgp_standard_1.6/bam_to_fasta` 
 and selecting the full list of FASTA files.
 
 Finally, under "Workflow Actions", select "Set Output Folder" and create a new folder for "Scaffolding", selecting the 
@@ -443,7 +448,7 @@ For configuring the inputs, select as follows:
 * Under "Arima Mapping" stage, specify the paired end HiC for the `Forward Reads` (R1) and `Reverse Reads` (R2) inputs. 
 * Under the "Salsa" stage, select the gear icon, and specify the HiC restriction enzyme (`GATC`) as the `Restriction enzyme bases` input.
 * Under the "File Concatenator" stage, select the **Haplotig** output from FALCON Unzip Stage 5 
-(`assembly_v1.5/unzip_stage_5/cns_h_ctg.fasta.gz`). 
+(`assembly_vgp_standard_1.6/unzip_stage_5/cns_h_ctg.fasta.gz`). 
 * **Click and drag** the `Final Scaffold FASTA` output 
 from Salsa to the File Concatenator `Files` input. You should see `1 File + 1 Link` listed as the input to the File Concatenator app.
 * Click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`

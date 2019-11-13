@@ -4,7 +4,7 @@ NEW VERSION -> work in progress <-
 ###### `code` and `parameters` and `buttons` and `folder/files structure`
 **workflows** and **important names**
 
-_Species ID_ and _other names_
+_Species ID_ and _other names_ and _**Species ID**_
 
 "other names"
 

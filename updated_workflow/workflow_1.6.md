@@ -151,15 +151,15 @@ Should any failures occur, the workflow can be restarted from the point of failu
 The final output should look like this:
 ```
 fArcCen1
-└── assembly_vgp_standard_1.6
+├── assembly_vgp_standard_1.6
 │   ├── bam_to_fasta
-│   ├── m#####_######_######.subreads.fasta.gz
-│   ├── m#####_######_######.subreads.fasta.gz
-│   ├── m#####_######_######.subreads.fasta.gz
-│   └── ...
+│   │   ├── m#####_######_######.subreads.fasta.gz
+│   │   ├── m#####_######_######.subreads.fasta.gz
+│   │   ├── m#####_######_######.subreads.fasta.gz
+│   │   └── ...
 │   ├── stage_0
-│   ├── read_counts.csv
-│   └── read_length_distribution.pdf
+│   │   ├── read_counts.csv
+│   │   └── read_length_distribution.pdf
 │   ├── stage_1
 │   │   ├── genome_scope
 │   │   ├── mer_counts.csv

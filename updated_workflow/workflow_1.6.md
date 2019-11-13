@@ -16,7 +16,7 @@ This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://v
 
 When assigned an assembly, you will given a species ID for your given genome (in this example `fArcCen1`, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
 
-The root folder of the project will have the ***Species ID*** name (`fArcCen1`) and contain the following folders and files:
+The root folder of the project will have the **Species ID** name (`fArcCen1`) and contain the following folders and files:
 
 ```
 fArcCen1

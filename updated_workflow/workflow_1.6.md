@@ -97,7 +97,7 @@ In your working project, click the workflow to open it in `Run` mode. Look throu
 The following are good to check as they tend to be misconfigured:
 1. Under the "Unzip Track Reads" stage, the instance type should be set to `mem4_ssd1_x128`
 
-Before configuring the workflow, it is good practice to create an edit-able copy of the workflow in case anything is 
+Before configuring the workflow, it is good practice to create an editable copy of the workflow in case anything is 
 misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return the the `Run Analysis...` screen by clicking the `Start Analysis` 
 button.
 
@@ -109,14 +109,14 @@ Once the workflow is configured, select the `BAM Files` input under the `BAM to 
 
 Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the parameters panel and fill in the 
 `Genome Size` parameter with the given species' expected genome size. For `fArcCen1`, the estimated genome size is 
-0.99Gbp, so we fill in `0.99G`. This can also be estimated by running `Jellyfish and Genomescope` on the raw 10x 
-Genomics reads.
+0.99Gbp, so we fill in `0.99G`. The genome size can be obtained from the [Animal Genome Size Database](http://www.genomesize.com/) or if the species is no available there, can also be estimated by running `Jellyfish and Genomescope` on the raw 10x 
+Genomics reads (check at the end of this section about how to run the Genomescope workflow).
 
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
 
 In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, 
-select `Set Output Folder`. Create a new folder with the name `assembly_version1.6` and select this as the output folder 
+select `Set Output Folder`. Create a new folder with the name `assembly_vgp_standard_1.6` and select this as the output folder 
 for the `Falcon and Unzip Assembly Workflow`. All of the output folders for the individual stages should already be 
 configured. When the analysis is complete, there will be a total of 10 subdirecories in your specified output directory, 
 one for each stage of the workflow:

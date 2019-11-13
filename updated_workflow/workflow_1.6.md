@@ -1,6 +1,8 @@
 NEW VERSION -> work in progress <-
 ==================================
 ###### The idea is to use the old as a backbone, so I will start adding things to this:
+###### `code` and `parameters` and `buttons` and `folder/files structure`
+###### **workflows** and **important names**
 
 
 

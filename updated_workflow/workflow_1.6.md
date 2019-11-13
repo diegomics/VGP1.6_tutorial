@@ -6,22 +6,22 @@ NEW VERSION -> work in progress <-
 
 _Species ID_ and _other names_ and _**Species ID**_
 
-"other names"
+"other names", "tabs"
 
 
 
-# fArcCen1 Assembly Tutorial
+# _fArcCen1_ Assembly Tutorial
 
-This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/) `fArcCen1`. The overall workflow can be depicted in the following simplified chart:
+This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/) _**fArcCen1**_. The overall workflow can be depicted in the following simplified chart:
 
 ![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/2019_0731_VGP_Pipeline_1.6.png)
 
 
 ## Getting Started
 
-When assigned an assembly, you will given a species ID for your given genome (in this example `fArcCen1`, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
+When assigned an assembly, you will given a **Species ID** for your given genome (in this example _fArcCen1_, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
 
-The root folder of the project will have the **Species ID** name (`fArcCen1`) and contain the following folders and files:
+The root folder of the project will have the **Species ID** name (_fArcCen1_) and contain the following folders and files:
 
 ```
 fArcCen1
@@ -81,7 +81,7 @@ This includes raw data from 4 data types:
 
 
 
-To make sure the project is configured correctly, navigate to the `Settings` tab of the project. In addition to the project name (`fArcCen1`), the following fields should be configured as such:
+To make sure the project is configured correctly, navigate to the `Settings` tab of the project. In addition to the project name (_**fArcCen1**_), the following fields should be configured as such:
 
 ```
 Billed To: org-erich_lab
@@ -89,13 +89,13 @@ Region: AWS (US East)
 Tags: White-faced whistling Duck, vgp, vgl
 ```
 
-The `Tags` field will contain the common species name which is specific to your species.
+The "Tags" field will contain the common species name which is specific to your species.
 
 Note: All work should be done in the project shared with you. Do **not** create a new project to work in.
 
 ## Falcon and Unzip Assembly
 
-Click the green button `+ Add Data`  and search and select **VGP Tools** in the `Other Project` tab. Select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow is been copied to the current location of your working project.
+Click the green button `+ Add Data`  and search and select **VGP Tools** in the "Other Project" tab. Select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow is been copied to the current location of your working project.
 
 In your working project, click the workflow to open it in `Run` mode. Look through the workflow to make sure all instances and inputs are configured correctly.
 

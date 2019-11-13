@@ -7,15 +7,14 @@ NEW VERSION -> work in progress <-
 
 # fArcCen1 Assembly Tutorial
 
-This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/) `fArcCen1`. The overall workflow can be depicted in the following chart:
+This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/) `fArcCen1`. The overall workflow can be depicted in the following simplified chart:
 
 ![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/2019_0731_VGP_Pipeline_1.6.png)
 
+
 ## Getting Started
 
-When assigned an assembly, you will given a species ID for your given genome 
-(in this example `fArcCen1`, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing 
-the raw files for the genome which have been linked from the VGP AWS bucket.
+When assigned an assembly, you will given a species ID for your given genome (in this example `fArcCen1`, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
 
 The root folder of the project will have the Species ID name (`fArcCen1`) and contain the following folders and files:
 
@@ -69,10 +68,13 @@ fArcCen1
 ```
 
 This includes raw data from 4 data types:
-1. HiC (provided by Phase Genomics or Arima) (`*.fastq.gz`)
-2. Pacbio Sequel reads (`*.bam`)
-3. 10X Genomics linked reads (`*.fastq.gz`)
-4. Bionano optical maps (`*.cmap`)
+1. 10X Genomics linked reads (`*.fastq.gz`)
+2. Bionano optical maps (`*.cmap`)
+3. Pacbio Sequel reads (`*.bam`)
+4. HiC (provided by Phase Genomics or Arima) (`*.fastq.gz`)
+
+
+
 
 To make sure the project is configured correctly, navigate to the `Settings` tab of the project. In addition to the project name (`fArcCen1`), the following fields should be configured as such:
 
@@ -88,7 +90,7 @@ Note: All work should be done in the project shared with you. Do **not** create 
 
 ## Falcon and Unzip Assembly
 
-Navigate to the **VGP Tools** folder and locate the **Falcon and Unzip Workflow**. Right click the workflow and select `Copy`, after which a dialogue box will pop up requesting that you select a project. Select your working project (`fArcCen1`).
+Click the green button **+ Add Data**  and search and select **VGP Tools** in the `Other Project` tab. Select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow is been copied to the current location of your working project.
 
 In your working project, click the workflow to open it in `Run` mode. Look through the workflow to make sure all instances and inputs are configured correctly.
 
@@ -96,9 +98,7 @@ The following are good to check as they tend to be misconfigured:
 1. Under the "Unzip Track Reads" stage, the instance type should be set to `mem4_ssd1_x128`
 
 Before configuring the workflow, it is good practice to create an edit-able copy of the workflow in case anything is 
-misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` from the `Run Analysis...` screen 
-and selecting the `Save Template` action. This will take you to a copy of the workflow that can be modified. Workflows 
-are automatically saved if any changes are made. Return the the `Run Analysis...` screen by clicking the `Start Analysis` 
+misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return the the `Run Analysis...` screen by clicking the `Start Analysis` 
 button.
 
 ![Workflow Actions: Save as Template](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowSaveAsTemplate.png)

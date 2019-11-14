@@ -1,6 +1,6 @@
 NEW VERSION -> work in progress <-
 ==================================
-###### The idea is to use the old as a backbone, so I will start adding things to this:
+###### The idea is to use the old as a backbone, so I will start adding things to this: I thinks that this is the easyest way (TCV)
 ###### `code` and `parameters` and `buttons` and `folder/files structure`
 **workflows** and **important names**
 
@@ -336,6 +336,9 @@ scaffolding
 In this output, the primary contigs are contained in `curated.fasta.gz` and the purged haplotigs are contained in 
 `curated.haplotigs.fasta.gz`.
 
+
+Before and after Pure_dups is important to run Busco!
+
 ## 2. Scaff10x Workflow
 
 The Scaff10x workflow performs two rounds of scaffolding with Scaff10x using the 10X Genomics raw reads. Copy the 
@@ -493,3 +496,13 @@ After running the workflow:
 
 
 ## Step 6. Freebayes Polishing
+
+Freebayes use the concatenated output of purgedup and the output from salsato polish the ensamble
+
+Input:
+-s3 + q2 + mitotig: s4
+- Out From SAlSA (I'm not sure about the name now TCV)
+
+Copy the last version of "Scaffold 5 Arrow Polish"
+
+

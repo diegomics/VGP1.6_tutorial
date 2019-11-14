@@ -12,9 +12,9 @@ _Species ID_ and _other names_ and _**Species ID**_
 
 # _fArcCen1_ Assembly Tutorial
 
-This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/). The overall workflow can be depicted in the following simplified chart:
+This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/). The overall assembly workflow can be depicted in the following simplified chart:
 
-![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/2019_0731_VGP_Pipeline_1.6.png)
+![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/vgp1.6.png)
 
 
 ## Getting Started

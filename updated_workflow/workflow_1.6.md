@@ -505,4 +505,12 @@ Input:
 
 Copy the last version of "Scaffold 5 Arrow Polish"
 
+The First input are the bam files from Pacbio (please don't include *.scraps.bam files)
+As an opcional parameter you could include de *.pbi files from the Pacbio reads (in the same folder than Pacbio reads)
+Then the S4 version of your ensamble and it's ready to submit!
+As seen in the photo:
+
+![magen](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/Screenshot%20from%202019-11-14%2014-59-10.png)
+
+
 

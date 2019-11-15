@@ -12,7 +12,7 @@ _Species ID_ and _other names_ and _**Species ID**_
 
 # _fArcCen1_ Assembly Tutorial
 
-This tutorial covers end-to-end assembly of the species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus/). The overall assembly pipeline can be depicted in the following simplified chart:
+The overall assembly pipeline can be depicted in the following simplified chart:
 
 ![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/vgp1.6.png)
 
@@ -83,7 +83,7 @@ This includes raw data from 4 data types:
 To make sure the project is configured correctly, navigate to the "Settings" tab of the project. In addition to the project name (_**fArcCen1**_), the following fields should be configured as such:
 
 ```
-Billed To: org-erich_lab
+Billed To: org-erich_lab # Always is a good idea to ask this in the training channel of slack
 Region: AWS (US East)
 Tags: White-faced whistling Duck, vgp, vgl
 ```
@@ -99,7 +99,7 @@ Click the green button `+ Add Data`  and search and select **VGP Tools** in the 
 In your working project, click the workflow to open it in _Run_ mode. Look through the workflow to make sure all instances and inputs are configured correctly.
 
 The following are good to check as they tend to be misconfigured:
-1. Under the "Unzip Track Reads" stage, the instance type should be set to `mem4_ssd1_x128`
+1. Under the "Unzip Track Reads" stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of slack.
 
 Before configuring the workflow, it is good practice to create an editable copy of the workflow in case anything is 
 misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return the the `Run Analysis...` screen by clicking the `Start Analysis` 
@@ -107,14 +107,14 @@ button.
 
 ![Workflow Actions: Save as Template](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowSaveAsTemplate.png)
 
-Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
+Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue windows to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
 
 ![BAM to FASTA input](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/BAMtoFASTAinput.png)
 
 Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the parameters panel and fill in the 
 "Estimated genome size" parameter with the given species' expected genome size. For `fArcCen1`, the estimated genome size is 
 0.99Gbp, so we fill in `0.99G`. The genome size can be obtained from the [Animal Genome Size Database](http://www.genomesize.com/) or if the species is no available there, can also be estimated by running **Jellyfish and GenomeScope** on the raw 10x 
-Genomics reads (check at the end of this section about how to run the _Genomescope_ workflow).
+Genomics reads (check at the end of this section about how to run the _Genomescope_ workflow) feel free to ask in the training section of slack if you have further question.
 
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
@@ -255,32 +255,28 @@ fArcCen1
 
 ```
 
-The `unzip_stage_5` folder contains the primary assembly (`cns_p_ctg.fasta.gz`) and the haplotype assembly 
-(`cns_h_ctg.fasta.gz`) which will be used in the scaffolding workflow.
+The `unzip_stage_5` folder contains the primary assembly (`cns_p_ctg.fasta.gz`) from now on "p1" and the haplotype assembly 
+(`cns_h_ctg.fasta.gz`) from now on "p2", which will be used in the scaffolding workflow.
 
 ## Scaffolding
 
-### 1. Purge Haplotigs
+### 1. PurgeDups
 
-The Purge Haplotigs step consists of two stages:
+The PurgeDups Haplotigs step consists of two stages:
 1. Part 1 performs alignment with Minimap2 and generates a coverage histogram plot
-2. Part 2 uses cutoffs to purge haplotigs
+2. Part 2 uses cutoffs to purgeDups
 
-From the `VGP Tools` project, copy the `Purge Haplotigs Part 1` and `Purge Haplotigs Part 2` workflows to your working 
-project. In the `fArcCen1` working project, select the `Purge Haplotigs Part 1` workflow.
+From the `VGP Tools` project, copy the `PurgeDups` workflows to your working 
+project. In the `fArcCen1` working project, select the `PurgeDups` workflow.
 
-Under the `Rename Contigs` stage, select the `*.fasta` input file by navigating to `assembly_vgp_standard_1.6/unzip_stage_5` and 
+Inside the PurgeDups, select the `*.fasta` input file by navigating to `assembly_vgp_standard_1.6/unzip_stage_5` and 
 selecting the file `cns_p_ctg.fasta.gz`. This represents the primary unzipped assembly.
-
-Under the `Minimap2` stage, provide the *raw* PacBio FASTA files as input by navigating to `assembly_vgp_standard_1.6/bam_to_fasta` 
+And provide the *raw* PacBio FASTA files as input by navigating to `assembly_vgp_standard_1.6/bam_to_fasta` 
 and selecting the full list of FASTA files.
 
 Finally, under "Workflow Actions", select "Set Output Folder" and create a new folder for "Scaffolding", selecting the 
 `Scaffolding` folder as the output folder. All of the apps should have individual output folders configured. Now run the
-`Purge Haplotigs Stage 1` workflow.
-
-Once the analysis completes, take a look at the `cns_p_ctg.renamed.coverage_histo.pdf` output file by selecting the file
-and clicking on "Preview".
+`PurgeDups` workflow.
 
 ![Right click the output file and select "Preview"]()
 

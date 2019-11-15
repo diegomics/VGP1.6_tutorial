@@ -72,11 +72,11 @@ fArcCen1
 
 ```
 
-This includes raw data from 4 data types:
+This includes 4 types of raw data:
 1. 10X Genomics linked reads (`*.fastq.gz`)
 2. Bionano optical maps (`*.cmap`)
 3. Pacbio Sequel reads (`*.bam`)
-4. HiC (provided by Phase Genomics or Arima) (`*.fastq.gz`)
+4. HiC (provided by Arima or Phase Genomics) (`*.fastq.gz`)
 
 
 
@@ -84,7 +84,7 @@ This includes raw data from 4 data types:
 To make sure the project is configured correctly, navigate to the "Settings" tab of the project. In addition to the project name (_**fArcCen1**_), the following fields should be configured as such:
 
 ```
-Billed To: org-erich_lab # Always is a good idea to ask this in the training channel of slack
+Billed To: org-erich_lab
 Region: AWS (US East)
 Tags: White-faced whistling Duck, vgp, vgl
 ```

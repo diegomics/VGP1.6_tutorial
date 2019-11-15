@@ -12,6 +12,7 @@ _Species ID_ and _other names_ and _**Species ID**_
 
 # _fArcCen1_ Assembly Tutorial
 
+This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_).
 The overall assembly pipeline can be depicted in the following simplified chart:
 
 ![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/vgp1.6.png)
@@ -19,7 +20,7 @@ The overall assembly pipeline can be depicted in the following simplified chart:
 
 ## Getting Started
 
-When assigned an assembly, you will given a **Species ID** for your given genome (in this example _**fArcCen1**_, for the fish species _Archocentrus centrarchus_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
+When assigned an assembly, you will given a **Species ID** for your given genome (in this example _**fArcCen1**_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
 
 The root folder of the project will have the _Species ID_ name (_fArcCen1_) and contain the following folders and files:
 

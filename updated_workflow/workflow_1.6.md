@@ -12,11 +12,12 @@ _Species ID_ and _other names_ and _**Species ID**_
 
 # _fArcCen1_ Assembly Tutorial
 
-This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_).
+This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_) in the DNAnexus platform.
 The overall assembly pipeline can be depicted in the following simplified chart:
 
 ![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/vgp1.6.png)
 
+IMPORTANT: Remember that you always can ask your questions in training channel of Slack!
 
 ## Getting Started
 
@@ -80,33 +81,34 @@ This includes 4 types of raw data:
 
 
 
-
 To make sure the project is configured correctly, navigate to the "Settings" tab of the project. In addition to the project name (_**fArcCen1**_), the following fields should be configured as such:
 
 ```
 Billed To: org-erich_lab
 Region: AWS (US East)
-Tags: White-faced whistling Duck, vgp, vgl
+Tags: Flier Cyclid
 ```
 
-The "Tags" field will contain the common species name which is specific to your species.
 
-Note: All work should be done in the project shared with you. Do **not** create a new project to work in.
+IMPORTANT: All work should be done in the project shared with you. Do **not** create a new project to work in.
 
 ## Falcon and Unzip Assembly
 
-Click the green button `+ Add Data`  and search and select **VGP Tools** in the "Other Project" tab. Select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow is been copied to the current location of your working project.
+Click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has being copied to the current location of your working project.
 
-In your working project, click the workflow to open it in _Run_ mode. Look through the workflow to make sure all instances and inputs are configured correctly.
-
-The following are good to check as they tend to be misconfigured:
-1. Under the "Unzip Track Reads" stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of slack.
+In your working project, click the workflow to open it in _Run_ mode.
 
 Before configuring the workflow, it is good practice to create an editable copy of the workflow in case anything is 
-misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return the the `Run Analysis...` screen by clicking the `Start Analysis` 
+misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return to the `Run Analysis...` screen by clicking the `Start Analysis` 
 button.
 
 ![Workflow Actions: Save as Template](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowSaveAsTemplate.png)
+
+Look through the workflow to make sure all instances and inputs are configured correctly. Please check the following as they tend to be misconfigured:
+
+1. Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack.
+
+
 
 Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue windows to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
 

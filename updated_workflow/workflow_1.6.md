@@ -12,12 +12,13 @@ _Species ID_ and _other names_ and _**Species ID**_
 
 # _fArcCen1_ Assembly Tutorial
 
-This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_) in the DNAnexus platform.
+This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_) using the DNAnexus platform.
 The overall assembly pipeline can be depicted in the following simplified chart:
 
 ![Workflow chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/vgp1.6.png)
 
-IMPORTANT: Remember that you always can ask your questions in training channel of Slack!
+
+IMPORTANT: Remember that your questions are always welcome in training channel of Slack!
 
 ## Getting Started
 
@@ -94,19 +95,18 @@ IMPORTANT: All work should be done in the project shared with you. Do **not** cr
 
 ## Falcon and Unzip Assembly
 
-Click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has being copied to the current location of your working project.
+Click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 In your working project, click the workflow to open it in _Run_ mode.
 
 Before configuring the workflow, it is good practice to create an editable copy of the workflow in case anything is 
-misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return to the `Run Analysis...` screen by clicking the `Start Analysis` 
-button.
+misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return to the `Run Analysis...` screen by clicking the `Start Analysis` button.
 
 ![Workflow Actions: Save as Template](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowSaveAsTemplate.png)
 
 Look through the workflow to make sure all instances and inputs are configured correctly. Please check the following as they tend to be misconfigured:
 
-1. Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack.
+-. Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack.
 
 
 

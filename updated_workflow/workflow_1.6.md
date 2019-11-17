@@ -106,26 +106,18 @@ misconfigured or needs to be re-run. This can be done by selecting `Workflow Act
 
 Look through the workflow to make sure all instances and inputs are configured correctly. Please check the following as they tend to be misconfigured:
 
--. Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack.
+. Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack.
 
-
-
-Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue windows to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
+Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue window to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
 
 ![BAM to FASTA input](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/BAMtoFASTAinput.png)
 
-Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the parameters panel and fill in the 
-"Estimated genome size" parameter with the given species' expected genome size. For `fArcCen1`, the estimated genome size is 
-0.99Gbp, so we fill in `0.99G`. The genome size can be obtained from the [Animal Genome Size Database](http://www.genomesize.com/) or if the species is no available there, can also be estimated by running **Jellyfish and GenomeScope** on the raw 10x 
-Genomics reads (check at the end of this section about how to run the _Genomescope_ workflow) feel free to ask in the training section of slack if you have further question.
+Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the parameters panel and fill in the "Estimated genome size" parameter with the given species' expected genome size. For `fArcCen1`, the estimated genome size is 0.99Gbp, so we fill in `0.99G`. The genome size can be obtained from the [Animal Genome Size Database](http://www.genomesize.com/) or if the species is no available there, can also be estimated by running **Jellyfish and GenomeScope** on the 10x Genomics reads (check at the end of this section about how to run the _Genomescope_ workflow).
 
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
 
-In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, 
-select `Set Output Folder`. Create a new folder with the name `assembly_vgp_standard_1.6` and select this as the output folder 
-for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be 
-configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, 
+In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `assembly_vgp_standard_1.6` and select this as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, 
 one for each stage of the workflow:
 
 1. BAM to FASTA (bam_to_fasta)
@@ -139,17 +131,13 @@ one for each stage of the workflow:
 9. FALCON Unzip stage 4 (unzip_stage_4)
 10. FALCON Unzip stage 5 (unzip_stage_5)
 
-The workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including 
-input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it 
- easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch 
+The workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch 
  the workflow.
 
 ![Remember to save your workflow configuration by clicking "Update Workflow with Changes"](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowUpdateWithChanges.png)
 ![Click the Run as Analysis button to launch the workflow.](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/RunAsAnalysisGo.png)
 
-Should any failures occur, the workflow can be restarted from the point of failure by navigating to the "Monitor" tab of
- the project and selecting the launched **vgp_falcon_and_unzip_assembly_workflow**. There you can select the `Rerun As Analysis` 
- button. Be sure to wait while all inputs and links populate before making any changes to the analysis parameters.
+Should any failures occur, the workflow can be restarted from the point of failure by navigating to the "Monitor" tab of the project and selecting the launched **vgp_falcon_and_unzip_assembly_workflow**. There you can select the `Rerun As Analysis` button. Be sure to wait while all inputs and links populate before making any changes to the analysis parameters.
 
 The final output should look like this:
 ```
@@ -258,8 +246,9 @@ fArcCen1
 
 ```
 
-The `unzip_stage_5` folder contains the primary assembly (`cns_p_ctg.fasta.gz`) from now on "p1" and the haplotype assembly 
-(`cns_h_ctg.fasta.gz`) from now on "p2", which will be used in the scaffolding workflow.
+The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz`) and the **Alternate haplotigs** (`cns_h_ctg.fasta.gz`), which will be used in the following steps of the assembly pipeline.
+
+-> ADD CREATE INTERMEDIATES FOLDER AND CHANGE NAMES
 
 ## Scaffolding
 

@@ -95,6 +95,8 @@ IMPORTANT: All work should be done in the project shared with you. Do **not** cr
 
 ## Falcon and Unzip Assembly
 
+INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
+
 Click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 In your working project, click the workflow to open it in _Run_ mode.
@@ -129,7 +131,7 @@ In addition to selecting parameters, it is useful to specify an output folder fo
 9. FALCON Unzip stage 4 (unzip_stage_4)
 10. FALCON Unzip stage 5 (unzip_stage_5)
 
-The workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.
+All the stages of the workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.
 
 ![Remember to save your workflow configuration by clicking "Update Workflow with Changes"](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowUpdateWithChanges.png)
 ![Click the Run as Analysis button to launch the workflow.](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/RunAsAnalysisGo.png)
@@ -271,51 +273,19 @@ Once the task is finished, click the green button `Start Analysis` and search th
 
 ## Scaffolding
 
-### 1. Purge Duplicates
+### 1. Purge Haplotigs
 
-The PurgeDups Haplotigs step consists of two stages:
-1. Part 1 performs alignment with Minimap2 and generates a coverage histogram plot
-2. Part 2 uses cutoffs to purgeDups
+INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 
-From the `VGP Tools` project, copy the `PurgeDups` workflows to your working 
-project. In the `fArcCen1` working project, select the `PurgeDups` workflow.
+In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 1 purge_dups** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
-Inside the PurgeDups, select the `*.fasta` input file by navigating to `assembly_vgp_standard_1.6/unzip_stage_5` and 
-selecting the file `cns_p_ctg.fasta.gz`. This represents the primary unzipped assembly.
-And provide the *raw* PacBio FASTA files as input by navigating to `assembly_vgp_standard_1.6/bam_to_fasta` 
-and selecting the full list of FASTA files.
+Click the workflow to open it in _Run_ mode and create an editable copy of the workflow in case anything is misconfigured or needs to be re-run.
+The inputs for the `purge_dups` stage are the **Primary contigs** file `fArcCen1_c1.fasta.gz` and the _PacBio Sequel Reads_ from the `pacbio` folder. Next, the input for the stage `concat c2+p2` is the **Alternate haplotigs** file `fArcCen1_c2.fasta.gz`. 
+Finally, under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `Scaffolding` and select this as the output folder for the **Scaffold 1 purge_dups** workflow.
 
-Finally, under "Workflow Actions", select "Set Output Folder" and create a new folder for "Scaffolding", selecting the 
-`Scaffolding` folder as the output folder. All of the apps should have individual output folders configured. Now run the
-`PurgeDups` workflow.
+All stages of the workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.
 
-![Right click the output file and select "Preview"]()
-
-A preview window will show you a PDF containing a bimodal histogram which can be used to select the Purge Haplotigs cutoffs.
-If the histogram is not biomodal (contains only one peak), you can skip ahead to the Scaff10x step.
-
-If the histogram is bimodal, select the cutoffs as follows:
-* _Low_: Threshold before the first peak
-* _Mid_: Threshold between two two peaks
-* _High_: Threshold above the second peak
-
-![Coverage histogram with indicated cutoffs](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/PurgeHaplotigsReadhist.png)
-
-Once you've determined the appropriate cutoffs, select the `Purge Haplotigs Part 2` workflow. Specify the file inputs as
-follows:
-* `Reference Genome`: "renamed" reference genome from the "scaffolding/purge_haplotigs" folder (`cns_p_ctg.renamed.fasta.gz`)
-* `Alignment`: merged mapping output file from the "scaffolding/purge_haplotigs" folder (`m54.bam`)
-* `Genome Coverage`: The `*.gencov` output file from the "scaffolding/purge_haplotigs" folder (`cns_p_ctg.renamed.gencov`)
-
-In addition, click the gear icon to the right of the app to open the parameters panel and specify the cutoffs. For 
-`fArcCen1`, we've chosen the following cutoffs: Low = 10, Mid = 48, High = 185.
-
-![Cutoffs specified in Part 2 app](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/PurgeHaplotigsCutoffs.png)
-
-Once the inputs and parameters are specified, specify the Output Folder as before to the "Scaffolding" folder. Now run 
-the analysis.
-
-The final output should look like this:
+Once finished, the final output should look like this:
 ```
 scaffolding
 └── purge_haplotigs

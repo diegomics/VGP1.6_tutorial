@@ -99,8 +99,7 @@ Click the green button `+ Add Data` and search and select **VGP Tools** in the "
 
 In your working project, click the workflow to open it in _Run_ mode.
 
-Before configuring the workflow, it is good practice to create an editable copy of the workflow in case anything is 
-misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return to the `Run Analysis...` screen by clicking the `Start Analysis` button.
+Before configuring the workflow, it is good practice to create an editable copy of the workflow in case anything is misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return to the `Run Analysis...` screen by clicking the `Start Analysis` button.
 
 ![Workflow Actions: Save as Template](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowSaveAsTemplate.png)
 
@@ -117,8 +116,7 @@ Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the p
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
 
-In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `assembly_vgp_standard_1.6` and select this as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, 
-one for each stage of the workflow:
+In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `assembly_vgp_standard_1.6` and select this as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, one for each stage of the workflow:
 
 1. BAM to FASTA (bam_to_fasta)
 2. FALCON stage 0 (stage_0)
@@ -245,7 +243,7 @@ fArcCen1
 
 ```
 
-The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz`) and the **Alternate haplotigs** (`cns_h_ctg.fasta.gz`), which will be used in the following steps of the assembly pipeline.
+The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz`) and the **Alternate haplotigs**  (`cns_h_ctg.fasta.gz`), which will be used in the following steps of the assembly pipeline.
 
 These two files must to be renamed using the convention of the VGP pipeline. To do this, first select the respective file and then click the pencil button that appears at the right to edit the name. In this example the name should be `fArcCen1_c1.fasta.gz` for the **Primary contigs** file, and `fArcCen1_c2.fasta.gz` for the **Alternate haplotigs** file.
 

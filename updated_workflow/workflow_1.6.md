@@ -317,7 +317,7 @@ The **Curated primary** contigs should be contained in the file `fArcCen1_p1.fas
 At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far.
 First metrics. then KAT,  then busco.
 
-Note: if the 
+Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** are present in the `intermediates` folder but the `bam_to_fasta` folder is not present, you should run the applet **PacBio BAM to FASTA** which can be found in clicking the green button `Start Analysis`. The input of this applet are the _PacBio Sequel Reads_ from the `pacbio` folder and you should set up an output folder named `bam_to_fasta` inside the `assembly_vgp_standard_1.6` folder.
 
 
 ## 2. Scaff10x Workflow

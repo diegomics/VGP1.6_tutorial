@@ -118,7 +118,7 @@ Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the p
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
 
-In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Create a the follow folders with the name `assembly_vgp_standard_1.6` and then and select this as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, one for each stage of the workflow:
+In addition to selecting parameters, you should specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Create a folder named `assembly_vgp_standard_1.6`. Inside that new folder, create a folder named `intermediates`, and inside that, create a folder named `falcon_unzip`. Select `falcon_unzip` as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, one for each stage of the workflow:
 
 1. BAM to FASTA (bam_to_fasta)
 2. FALCON stage 0 (stage_0)
@@ -142,105 +142,107 @@ The final output should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
-│   ├── bam_to_fasta
-│   │   ├── m#####_######_######.subreads.fasta.gz
-│   │   ├── m#####_######_######.subreads.fasta.gz
-│   │   ├── m#####_######_######.subreads.fasta.gz
-│   │   └── ...
-│   ├── stage_0
-│   │   ├── read_counts.csv
-│   │   └── read_length_distribution.pdf
-│   ├── stage_1
-│   │   ├── genome_scope
-│   │   ├── mer_counts.csv
-│   │   ├── mer_counts.gs.log.png
-│   │   ├── mer_counts.gs.png
-│   │   ├── mer_counts.model.txt
-│   │   ├── mer_counts.progress.txt
-│   │   ├── mer_counts.summary.txt
-│   │   ├── out.####.fasta.gz
-│   │   ├── out.####.fasta.gz
-│   │   ├── out.####.fasta.gz
-│   │   ├── out.####.fasta.gz
-│   │   ├── out.####.fasta.gz
-│   │   ├── ...
-│   │   ├── preads_rep.tar.gz
-│   │   ├── preads_tan.tar.gz
-│   │   ├── raw_reads.###.las
-│   │   ├── raw_reads.###.las
-│   │   ├── raw_reads.###.las
-│   │   ├── raw_reads.###.las
-│   │   ├── ...
-│   │   ├── raw_reads_rep.tar.gz
-│   │   ├── raw_reads_tan.tar.gz
-│   │   │   └── read_counts.csv
-│   │   └── read_length_distribution.pdf
-│   ├── stage_2
-│   │   ├── preads.###.las
-│   │   ├── preads.###.las
-│   │   ├── preads.###.las
-│   │   └── ...
-│   ├── stage_3
-│   │   ├── a_ctg.fasta.gz
-│   │   ├── a_ctg_tiling_path.gz
-│   │   ├── asm.gfa.gz
-│   │   ├── asm.gfa2.gz
-│   │   ├── contig.gfa2.gz
-│   │   ├── ctg_paths.gz
-│   │   ├── p_ctg.fasta.gz
-│   │   ├── p_ctg_tiling_path.gz
-│   │   ├── preads4falcon.fasta.gz
-│   │   ├── read_counts.csv
-│   │   ├── read_length_distribution.pdf
-│   │   ├── sg.gfa.gz
-│   │   ├── sg.gfa2.gz
-│   │   ├── sg_edges_list.gz
-│   │   └── utg_data.gz
-│   ├── unzip_stage_1
-│   │   ├── ctg_list
-│   │   ├── pread_ids.gz
-│   │   ├── pread_to_contigs.gz
-│   │   ├── rawread_ids.gz
-│   │   ├── rawread_to_contigs.gz
-│   │   ├── read_to_contig_map.gz
-│   │   ├── reads_fastas_##.tar.gz
-│   │   ├── reads_fastas_##.tar.gz
-│   │   ├── reads_fastas_##.tar.gz
-│   │   ├── reads_fastas_##.tar.gz
-│   │   ├── ...
-│   │   ├── ref_fastas_###.tar.gz
-│   │   ├── ref_fastas_###.tar.gz
-│   │   ├── ref_fastas_###.tar.gz
-│   │   └── ...
-│   ├── unzip_stage_2
-│   │   ├── all_phased_reads.gz
-│   │   ├── rid_to_phase.###.tar.gz
-│   │   ├── rid_to_phase.###.tar.gz
-│   │   ├── rid_to_phase.###.tar.gz
-│   │   ├── rid_to_phase.###.tar.gz
-│   │   ├── rid_to_phase.###.tar.gz
-│   │   ├── rid_to_phase.###.tar.gz
-│   │   └── ...
-│   ├── unzip_stage_3
-│   │   ├── all_h_ctg.fa.gz
-│   │   ├── all_h_ctg_edges.gz
-│   │   ├── all_h_ctg_ids.gz
-│   │   ├── all_p_ctg.fa.gz
-│   │   ├── all_p_ctg_edges.gz
-│   │   ├── asm.gfa.gz
-│   │   └── sg.gfa.gz
-│   ├── unzip_stage_4
-│   │   ├── contig_groups.json
-│   │   ├── mappedread_###.tar.gz
-│   │   ├── mappedread_###.tar.gz
-│   │   ├── mappedread_###.tar.gz
-│   │   ├── mappedread_###.tar.gz
-│   │   └── ...
-│   └── unzip_stage_5
-│       ├── cns_h_ctg.fasta.gz
-│       ├── cns_h_ctg.fastq.gz
-│       ├── cns_p_ctg.fasta.gz
-│       └── cns_p_ctg.fastq.gz
+│   └── intermediates
+│       └── falcon_unzip
+│           ├── bam_to_fasta
+│           │   ├── m#####_######_######.subreads.fasta.gz
+│           │   ├── m#####_######_######.subreads.fasta.gz
+│           │   ├── m#####_######_######.subreads.fasta.gz
+│           │   └── ...
+│           ├── stage_0
+│           │   ├── read_counts.csv
+│           │   └── read_length_distribution.pdf
+│           ├── stage_1
+│           │   ├── genome_scope
+│           │   ├── mer_counts.csv
+│           │   ├── mer_counts.gs.log.png
+│           │   ├── mer_counts.gs.png
+│           │   ├── mer_counts.model.txt
+│           │   ├── mer_counts.progress.txt
+│           │   ├── mer_counts.summary.txt
+│           │   ├── out.####.fasta.gz
+│           │   ├── out.####.fasta.gz
+│           │   ├── out.####.fasta.gz
+│           │   ├── out.####.fasta.gz
+│           │   ├── out.####.fasta.gz
+│           │   ├── ...
+│           │   ├── preads_rep.tar.gz
+│           │   ├── preads_tan.tar.gz
+│           │   ├── raw_reads.###.las
+│           │   ├── raw_reads.###.las
+│           │   ├── raw_reads.###.las
+│           │   ├── raw_reads.###.las
+│           │   ├── ...
+│           │   ├── raw_reads_rep.tar.gz
+│           │   ├── raw_reads_tan.tar.gz
+│           │   ├── read_counts.csv
+│           │   └── read_length_distribution.pdf
+│           ├── stage_2
+│           │   ├── preads.###.las
+│           │   ├── preads.###.las
+│           │   ├── preads.###.las
+│           │   └── ...
+│           ├── stage_3
+│           │   ├── a_ctg.fasta.gz
+│           │   ├── a_ctg_tiling_path.gz
+│           │   ├── asm.gfa.gz
+│           │   ├── asm.gfa2.gz
+│           │   ├── contig.gfa2.gz
+│           │   ├── ctg_paths.gz
+│           │   ├── p_ctg.fasta.gz
+│           │   ├── p_ctg_tiling_path.gz
+│           │   ├── preads4falcon.fasta.gz
+│           │   ├── read_counts.csv
+│           │   ├── read_length_distribution.pdf
+│           │   ├── sg.gfa.gz
+│           │   ├── sg.gfa2.gz
+│           │   ├── sg_edges_list.gz
+│           │   └── utg_data.gz
+│           ├── unzip_stage_1
+│           │   ├── ctg_list
+│           │   ├── pread_ids.gz
+│           │   ├── pread_to_contigs.gz
+│           │   ├── rawread_ids.gz
+│           │   ├── rawread_to_contigs.gz
+│           │   ├── read_to_contig_map.gz
+│           │   ├── reads_fastas_##.tar.gz
+│           │   ├── reads_fastas_##.tar.gz
+│           │   ├── reads_fastas_##.tar.gz
+│           │   ├── reads_fastas_##.tar.gz
+│           │   ├── ...
+│           │   ├── ref_fastas_###.tar.gz
+│           │   ├── ref_fastas_###.tar.gz
+│           │   ├── ref_fastas_###.tar.gz
+│           │   └── ...
+│           ├── unzip_stage_2
+│           │   ├── all_phased_reads.gz
+│           │   ├── rid_to_phase.###.tar.gz
+│           │   ├── rid_to_phase.###.tar.gz
+│           │   ├── rid_to_phase.###.tar.gz
+│           │   ├── rid_to_phase.###.tar.gz
+│           │   ├── rid_to_phase.###.tar.gz
+│           │   ├── rid_to_phase.###.tar.gz
+│           │   └── ...
+│           ├── unzip_stage_3
+│           │   ├── all_h_ctg.fa.gz
+│           │   ├── all_h_ctg_edges.gz
+│           │   ├── all_h_ctg_ids.gz
+│           │   ├── all_p_ctg.fa.gz
+│           │   ├── all_p_ctg_edges.gz
+│           │   ├── asm.gfa.gz
+│           │   └── sg.gfa.gz
+│           ├── unzip_stage_4
+│           │   ├── contig_groups.json
+│           │   ├── mappedread_###.tar.gz
+│           │   ├── mappedread_###.tar.gz
+│           │   ├── mappedread_###.tar.gz
+│           │   ├── mappedread_###.tar.gz
+│           │   └── ...
+│           └── unzip_stage_5
+│               ├── cns_h_ctg.fasta.gz
+│               ├── cns_h_ctg.fastq.gz
+│               ├── cns_p_ctg.fasta.gz
+│               └── cns_p_ctg.fastq.gz
 └── genomic_data
 
 ```

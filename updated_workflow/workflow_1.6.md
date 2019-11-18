@@ -312,9 +312,7 @@ fArcCen1
 ^   ^
 ```
 
-
-FIX: In this output, the primary contigs are contained in `curated.fasta.gz` and the purged haplotigs are contained in 
-`curated.haplotigs.fasta.gz`.
+The **Curated primary** contigs should be contained in the file `fArcCen1_p1.fasta.gz`, and the **Alternate combined** haplotigs should be contained in the `fArcCen1_q2.fasta.gz` file.
 
 At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far.
 First metrics. then KAT,  then busco.

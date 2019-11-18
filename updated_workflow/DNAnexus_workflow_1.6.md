@@ -364,7 +364,7 @@ fArcCen1
 ```
 
 The output under `round2/scaffolds.fasta.gz` corresponds to `fArcCen1_s1.fasta.gz` using the VGP naming convention.
-
+Remember to move the `s1` file the `intermediates` folder by "drag and drop".
 
 ## 3. Bionano Hybrid Scaffolding
 
@@ -386,78 +386,93 @@ From the input data, we can see that there is a single `*.cmap.gz` file generate
 
 For the inputs select as follows:
 * CMAP input: `fArcCen1_Saphyr_DLE-1.cmap.gz` under `genomic_data/bionano/`
-* FASTA input: `scaffolds.fasta.gz` under `scaffolding/scaff10x/round2`
+* FASTA input: `fArcCen1_s1.fasta.gz`
 
-As before, specify the workflow output folder to `scaffolding`. A `bionano` folder will be automatically created under that.
+As before, specify the workflow output folder to `intermediates`. A `bionano` folder will be automatically created under that.
 
-The Bionano tool is prone to hanging if the memory requirements are not met. Therefore, make sure it is running on a 
-large memory instance, such as the `mem3_ssd1_x32` instance. The app is configured to aggressively time out if it does 
-not complete in under 6 hours. If this happens, rerun the analysis on a larger memory instance.
+The Bionano tool is prone to hanging if the memory requirements are not met. Therefore, make sure it is running on a large memory instance, such as the `mem3_ssd1_x32` instance. The app is configured to aggressively time out if it does not complete in under 6 hours. If this happens, rerun the analysis on a larger memory instance. Remember that you can always ask your doubts in the Slack channel.
 
-Once the app completes, the output should look as follows:
+Once the app completes, the output should look smilar as follows:
 ```
-scaffolding/bionano/
-├── bn_pre_cut_projected_ngs_coord_annotations.bed
-├── conflicts.txt
-├── conflicts_cut_status.txt
-├── conflicts_cut_status_CTTAAG.txt
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_BNGcontigs_HYBRID_SCAFFOLD.xmap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_BNGcontigs_HYBRID_SCAFFOLD_q.cmap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_BNGcontigs_HYBRID_SCAFFOLD_r.cmap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_HYBRID_SCAFFOLD.cmap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_HYBRID_SCAFFOLD_log.txt
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.agp
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.fasta
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.gap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.xmap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_NCBI.fasta
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_NOT_SCAFFOLDED.fasta
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_q.cmap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_r.cmap
-├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_trimHeadTailGap.coord
-├── hybrid_scaffold_output.tar.gz
-└── ngs_pre_cut_annotations.bed
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   └── intermediates
+│       ├── bionano
+│       │   ├── bn_pre_cut_projected_ngs_coord_annotations.bed
+│       │   ├── conflicts.txt
+│       │   ├── conflicts_cut_status.txt
+│       │   ├── conflicts_cut_status_CTTAAG.txt
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_BNGcontigs_HYBRID_SCAFFOLD.xmap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_BNGcontigs_HYBRID_SCAFFOLD_q.cmap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_BNGcontigs_HYBRID_SCAFFOLD_r.cmap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_HYBRID_SCAFFOLD.cmap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_HYBRID_SCAFFOLD_log.txt
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.agp
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.fasta
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.gap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD.xmap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_NCBI.fasta
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_NOT_SCAFFOLDED.fasta
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_q.cmap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_r.cmap
+│       │   ├── fArcCen1_Saphyr_DLE1_bppAdjust_cmap_scaffolds_fasta_NGScontigs_HYBRID_SCAFFOLD_trimHeadTailGap.coord
+│       │   ├── fArcCen1_s2.fasta.gz
+│       │   ├── hybrid_scaffold_output.tar.gz
+│       │   └── ngs_pre_cut_annotations.bed
+│       ├── falcon_unzip
+│       │   └── ...
+│       ├── fArcCen1_c1.fasta.gz
+│       ├── fArcCen1_c2.fasta.gz
+│       ├── fArcCen1_p1.fasta.gz
+│       ├── fArcCen1_q2.fasta.gz
+│       ├── fArcCen1_s1.fasta.gz
+│       ├── purge_dups
+│       │   └── ...
+│       └── scaff10x
+│           └── ...
+└── genomic_data
+
 ```
 
-As part of the Bionano hybrid scaffolding, you should also perform the following post-processing steps:
-1. Concatenate `UNSCAFFOLDED` and `SCAFFOLD_FINAL_NCBI` outputs
-2. Remove leading and trailing N's from scaffolded output.
+Remember to move the `s2` file the `intermediates` folder by "drag and drop".
 
-To concatenate the two outputs, select the "Run Analysis" button in your project and select the "File Concatenator" app.
-
-Supply the inputs `UNSCAFFOLDED` and `SCAFFOLD_FINAL_NCBI` to the app as well as the output name `fArcCen1_s2.fasta.gz`.
 
 ## Step 4. Salsa Scaffolding
 
-Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data:
-It will be located under the "genomic_data" folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
+Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data: It will be located under the "genomic_data" folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
 ```
-genomic_data/phase
-├── fArcCen1_DDHiC_R1.fastq.gz
-├── fArcCen1_DDHiC_R2.fastq.gz
-├── fArcCen1_S3HiC_R1.fastq.gz
-└── fArcCen1_S3HiC_R2.fastq.gz
+fArcCen1
+└── genomic_data
+    ├── 10x
+    │   └── ..
+    ├── bionano
+    │   └── ..
+    ├── pacbio
+    │   └── ..
+    └── phase
+        ├── fArcCen1_DDHiC_R1.fastq.gz
+        ├── fArcCen1_DDHiC_R2.fastq.gz
+        ├── fArcCen1_S3HiC_R1.fastq.gz
+        └── fArcCen1_S3HiC_R2.fastq.gz
+
 ```
 
 In addition to the input files, you will need to know the restriction enzymes used to generate the data. For `fArcCen1`,
 the sequences are `GATC`.
 
-Copy the `Step 4 Salsa Scaffolding` workflow into your project. The workflow performs the following steps:
+Copy the last version of the **scaffold_4_salsa** workflow into your project. The workflow performs the following steps:
 
 1. Align the HiC reads using the Arima mapping pipeline
 2. Run Salsa2 on aligned reads and the s2.fasta.gz scaffold
 3. Concatenate the output with the Haplotigs from FALCON Unzip
 
 For configuring the inputs, select as follows:
-* Under "Generate BWA Index Genome" stage, specify the scaffolded `fArcCen1_s2.fasta.gz` file for the `Genome` input.
-* Under "Arima Mapping" stage, specify the paired end HiC for the `Forward Reads` (R1) and `Reverse Reads` (R2) inputs. 
-* Under the "Salsa" stage, select the gear icon, and specify the HiC restriction enzyme (`GATC`) as the `Restriction enzyme bases` input.
-* Under the "File Concatenator" stage, select the **Haplotig** output from FALCON Unzip Stage 5 
-(`assembly_vgp_standard_1.6/unzip_stage_5/cns_h_ctg.fasta.gz`). 
-* **Click and drag** the `Final Scaffold FASTA` output 
-from Salsa to the File Concatenator `Files` input. You should see `1 File + 1 Link` listed as the input to the File Concatenator app.
+* Under the `BWA FASTA Indexer` stage, specify the scaffolds file `fArcCen1_s2.fasta.gz` for the `Genome` input.
+* Under the `Arima mapping` stage, specify the paired end HiC for the `Forward Reads` (R1) and `Reverse Reads` (R2) inputs. 
+* Under the `Salsa` stage, select the gear icon, and specify the HiC restriction enzyme (`GATC`) as the "Restriction enzyme bases" input.
+* Under the `concat s3+q2+mito` stage, select the **Alternate combined** haplotigs contained in the file `fArcCen1_q2.fasta.gz`. If a mitogenome is available for this species, it should be incorporated as input in this stage.
 * Click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`
-* Configure `Scaffolding` as the output folder.
+* Configure `intermediates` as the output folder.
 
 Here is what your configured workflow will look like:
 

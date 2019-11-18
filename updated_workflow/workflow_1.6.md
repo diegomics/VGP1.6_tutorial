@@ -265,11 +265,15 @@ fArcCen1
 │   │   └── ...
 .   .
 ^   ^
-
 ```
+
+RUNNING **Jellyfish and GenomeScope**: REMOVE GEMBARCODES FROM 10X READS, proc10xg applet in 
+In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. input 10x, outfolder.
+
+
 ## Scaffolding
 
-### 1. PurgeDups
+### 1. Purge Duplicates
 
 The PurgeDups Haplotigs step consists of two stages:
 1. Part 1 performs alignment with Minimap2 and generates a coverage histogram plot

@@ -295,11 +295,17 @@ fArcCen1
 │   │   └── ...
 │   ├── Scaffolding
 │   │   ├── haplotig_purged
-│   │   │   ├── COMPLETE NAME OF THE OUTPUTS <-- !!
+│   │   │   ├── fArcCen1_p2.fasta.gz
+│   │   │   ├── fArcCen1_q2.fasta.gz
 │   │   │   └── ...
-│   │   └── primary_purged
-│   │       ├── COMPLETE NAME OF THE OUTPUTS <-- !!
-│   │       └── ...
+│   │   ├── primary_purged
+│   │   │   ├── fArcCen1_p1.fasta.gz
+│   │   │   └── ...
+│   │   ├── fArcCen1_c2p2.fasta.gz
+│   │   ├── read_counts.csv
+│   │   ├── read_counts.csv
+│   │   ├── read_length_distribution.pdf
+│   │   └── read_length_distribution.pdf
 │   ├── stage_0
 │   │   └── ...
 .   .

@@ -279,42 +279,39 @@ INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 
 In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 1 purge_dups** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
-Click the workflow to open it in _Run_ mode and create an editable copy of the workflow in case anything is misconfigured or needs to be re-run.
-The inputs for the `purge_dups` stage are the **Primary contigs** file `fArcCen1_c1.fasta.gz` and the _PacBio Sequel Reads_ from the `pacbio` folder. Next, the input for the stage `concat c2+p2` is the **Alternate haplotigs** file `fArcCen1_c2.fasta.gz`. 
+Click the workflow to open it in _Run_ mode and create an editable copy of it in case anything is misconfigured or needs to be re-run.
+The inputs for the `purge_dups` stage are the **c1** file `fArcCen1_c1.fasta.gz` and the _PacBio Sequel Reads_ from the `pacbio` folder. Next, the input for the stage `concat c2+p2` is the **c2** file `fArcCen1_c2.fasta.gz`. 
 Finally, under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `Scaffolding` and select this as the output folder for the **Scaffold 1 purge_dups** workflow.
 
 All stages of the workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.
 
 Once finished, the final output should look like this:
 ```
-scaffolding
-└── purge_haplotigs
-     ├── mapped_reads
-     │    ├── cns_p_ctg.renamed.mmi
-     │    ├── m#####_######_######.subreads.mapped.bam
-     │    ├── m#####_######_######.subreads.mapped.bam.bai
-     │    ├── ...
-     │    └── ...
-     ├── cns_p_ctg.renamed.coverage_histo.pdf
-     ├── cns_p_ctg.renamed.fasta.gz
-     ├── cns_p_ctg.renamed.gencov
-     ├── cns_p_ctg.renamed_coverage_stats.csv.gz
-     ├── curated.artefacts.fasta.gz
-     ├── curated.contig_associations.log
-     ├── curated.fasta.gz
-     ├── curated.haplotigs.fasta.gz
-     ├── curated.reassignments.tsv
-     ├── dotplots_reassigned_contigs.tar.gz
-     ├── dotplots_unassigned_contigs.tar.gz
-     ├── m54.bam
-     └── m54.bam.bai
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   ├── bam_to_fasta
+│   │   └── ...
+│   ├── intermediates
+│   │   └── ...
+│   ├── Scaffolding
+│   │   ├── haplotig_purged
+│   │   │   ├── COMPLETE NAME OF THE OUPUTS <-- !!
+│   │   │   └── ...
+│   │   └── primary_purged
+│   │       ├── COMPLETE NAME OF THE OUPUTS <-- !!
+│   │       └── ...
+│   ├── stage_0
+│   │   └── ...
+.   .
+^   ^
 ```
 
-In this output, the primary contigs are contained in `curated.fasta.gz` and the purged haplotigs are contained in 
+
+FIX: In this output, the primary contigs are contained in `curated.fasta.gz` and the purged haplotigs are contained in 
 `curated.haplotigs.fasta.gz`.
 
-
-Before and after Pure_dups is important to run Busco!
+At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far.
+First metrics. then KAT,  then busco.
 
 ## 2. Scaff10x Workflow
 

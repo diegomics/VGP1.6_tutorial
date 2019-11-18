@@ -249,23 +249,21 @@ fArcCen1
 
 The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz`) and the **Alternate haplotigs**  (`cns_h_ctg.fasta.gz`), which will be used in the following steps of the assembly pipeline.
 
-These two files must to be renamed using the convention of the VGP pipeline. To do this, first select the respective file and then click the pencil button that appears at the right to edit the name. In this example the name should be `fArcCen1_c1.fasta.gz` for the **Primary contigs** file, and `fArcCen1_c2.fasta.gz` for the **Alternate haplotigs** file.
+These two files must be renamed using the convention of the VGP pipeline. To do this, first select the respective file and then click the pencil button that appears at the right to edit the name. In this example the name should be `fArcCen1_c1.fasta.gz` for the **Primary contigs** file, and `fArcCen1_c2.fasta.gz` for the **Alternate haplotigs** file.
 
-Next, it is required that every intermediate assembly produced during the pipeline is placed in a specific folder. Navigate to the `assembly_vgp_standard_1.6` folder and click the green button `New Folder` to create a folder named `intermediates`. Move the `c1` and `c2` files to the `intermediates` folder by "drag and drop".
+Next, it is required that every intermediate assembly produced during the pipeline is placed in a specific folder. Move the `c1` and `c2` files to the `intermediates` folder by "drag and drop".
 
 The final folder structure should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
-│   ├── bam_to_fasta
-│   │   └── ...
-│   ├── intermediates
-│   │   ├── fArcCen1_c1.fasta.gz
-│   │   └── fArcCen1_c2.fasta.gz
-│   ├── stage_0
-│   │   └── ...
-.   .
-^   ^
+│   └── intermediates
+│       └── falcon_unzip
+│       │   └── ...
+│       ├── fArcCen1_c1.fasta.gz
+│       └── fArcCen1_c2.fasta.gz
+└── genomic_data
+
 ```
 
 RUNNING **Jellyfish and GenomeScope**: To run correctly  this workflow, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
@@ -283,7 +281,7 @@ In your working project, click the green button `+ Add Data` and search and sele
 
 Click the workflow to open it in _Run_ mode and create an editable copy of it in case anything is misconfigured or needs to be re-run.
 The inputs for the `purge_dups` stage are the **c1** file `fArcCen1_c1.fasta.gz` and the _PacBio Reads converted to fasta_ from the `bam_to_fasta` folder. Next, the input for the stage `concat c2+p2` is the **c2** file `fArcCen1_c2.fasta.gz`. 
-Finally, under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `Scaffolding` and select this as the output folder for the **Scaffold 1 purge_dups** workflow.
+Finally, under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `purge_dups`  inside the and select this as the output folder for the **Scaffold 1 purge_dups** workflow.
 
 All stages of the workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.
 
@@ -291,27 +289,25 @@ Once finished, the final output should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
-│   ├── bam_to_fasta
-│   │   └── ...
-│   ├── intermediates
-│   │   └── ...
-│   ├── Scaffolding
-│   │   ├── haplotig_purged
-│   │   │   ├── fArcCen1_p2.fasta.gz
-│   │   │   ├── fArcCen1_q2.fasta.gz
-│   │   │   └── ...
-│   │   ├── primary_purged
-│   │   │   ├── fArcCen1_p1.fasta.gz
-│   │   │   └── ...
-│   │   ├── fArcCen1_c2p2.fasta.gz
-│   │   ├── read_counts.csv
-│   │   ├── read_counts.csv
-│   │   ├── read_length_distribution.pdf
-│   │   └── read_length_distribution.pdf
-│   ├── stage_0
-│   │   └── ...
-.   .
-^   ^
+│   └── intermediates
+│       └── falcon_unzip
+│       │   └── ...
+│       ├── fArcCen1_c1.fasta.gz
+│       ├── fArcCen1_c2.fasta.gz
+│       └── purge_dups
+│           ├── haplotig_purged
+│           │   ├── fArcCen1_p2.fasta.gz
+│           │   ├── fArcCen1_q2.fasta.gz
+│           │   └── ...
+│           ├── primary_purged
+│           │   ├── fArcCen1_p1.fasta.gz
+│           │   └── ...
+│           ├── read_counts.csv
+│           ├── read_counts.csv
+│           ├── read_length_distribution.pdf
+│           └── read_length_distribution.pdf
+└── genomic_data
+
 ```
 
 The **Curated primary** contigs should be contained in the file `fArcCen1_p1.fasta.gz`, and the **Alternate combined** haplotigs should be contained in the `fArcCen1_q2.fasta.gz` file.

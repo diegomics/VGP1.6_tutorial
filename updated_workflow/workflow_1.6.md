@@ -256,9 +256,13 @@ The final folder structure should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── bam_to_fasta
+│   │   └── ...
 │   ├── intermediates
 │   │   ├── fArcCen1_c1.fasta.gz
 │   │   └── fArcCen1_c2.fasta.gz
+│   ├── stage_0
+│   │   └── ...
 .   .
 ^   ^
 

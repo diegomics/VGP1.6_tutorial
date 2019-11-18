@@ -118,7 +118,7 @@ Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the p
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
 
-In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `assembly_vgp_standard_1.6` and select this as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, one for each stage of the workflow:
+In addition to selecting parameters, it is useful to specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Create a the follow folders with the name `assembly_vgp_standard_1.6` and then and select this as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, one for each stage of the workflow:
 
 1. BAM to FASTA (bam_to_fasta)
 2. FALCON stage 0 (stage_0)

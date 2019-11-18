@@ -313,7 +313,9 @@ fArcCen1
 The **Curated primary** contigs should be contained in the file `fArcCen1_p1.fasta.gz`, and the **Alternate combined** haplotigs should be contained in the `fArcCen1_q2.fasta.gz` file.
 
 At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far. To do this, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the applets named `asm_stats` and `busco`, and the workflow named `Evaluation KAT Plot`.
-To obtain the standard assembly statistics run the `asm_stats` applet using as input the respective assembly to be evaluated. In addition, click the gear icon and complete "Genome size (bp)" field with the size of the genome in base pairs and `fArcCen1` "species code" field. Create a new folder with the name `Stats` inside the `assembly_vgp_standard_1.6` folder and select it as the output folder. Check the 
+To obtain the standard assembly statistics run the `asm_stats` applet using as input the respective assembly to be evaluated. In addition, click the gear icon and complete "Genome size (bp)" field with the size of the genome in base pairs, and `fArcCen1` in the "species code" field. Inside the `assembly_vgp_standard_1.6` folder, create a new folder with the name `evaluation`. Create a folder inside `evaluation` with the name of the assembly stage to be evaluated (for example, `c1`) and select it as the output folder. Finally, click `Run as Analysis...` to launch the applet.
+You should check for an improvement in the assembly metrics with the progress of the pipeline.
+
 
 
 

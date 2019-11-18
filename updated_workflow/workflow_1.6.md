@@ -259,7 +259,8 @@ fArcCen1
 │   ├── intermediates
 │   │   ├── fArcCen1_c1.fasta.gz
 │   │   └── fArcCen1_c2.fasta.gz
-.. ..
+.   .
+^   ^
 
 ```
 ## Scaffolding

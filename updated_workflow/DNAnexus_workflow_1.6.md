@@ -324,7 +324,7 @@ When comparing the plot obtained por _c1c2_ and for _p1q2_ you should see an imp
 Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** are present in the `intermediates` folder but the `bam_to_fasta` folder is not present, you should run the applet **PacBio BAM to FASTA** which can be found by clicking the green button `Start Analysis`. The input of this applet are the _PacBio Sequel Reads_ from the `pacbio` folder and you should set up an output folder named `bam_to_fasta` inside the `intermediates` folder.
 
 
-## 2. Scaff10x Workflow
+## 2. 10X scaffolding
 
 The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -368,20 +368,21 @@ The output under `round2/scaffolds.fasta.gz` corresponds to `fArcCen1_s1.fasta.g
 
 ## 3. Bionano Hybrid Scaffolding
 
-In this step we will be using the Bionano assembled CMAP data together with the scaffold `fArcCen1_s1.fasta.gz` from 
-step 2 to perform hybrid scaffolding on the primary haplotig.
+The next step uses the Bionano assembled CMAP data together with the scaffolds file `fArcCen1_s1.fasta.gz` from the previous step to perform hybrid scaffolding on the primary haplotig.
 
 Before copying the workflow, we need to first take a look at the Bionano input data:
 ```
-genomic_data/bionano/
-├── fArcCen1_Saphyr_DLE-1.cmap.gz
-├── fArcCen1_Saphyr_DLE-1_1265239.bnx.gz
-└── fArcCen1_Saphyr_DLE-1_1265240.bnx.gz
+fArcCen1
+└── genomic_data
+    ├── 10x
+    │   ├── fArcCen1_Saphyr_DLE-1.cmap.gz
+    │   ├── fArcCen1_Saphyr_DLE-1_1265239.bnx.gz
+    │   └── fArcCen1_Saphyr_DLE-1_1265240.bnx.gz
+    ├── ...
+    └── ...  
 ```
 
-From the input data, we can see that there is a single `*.cmap.gz` file generated using the `DLE-1` enzyme. Therefore,
-copy the `Step 3 Bionano Hybrid Scaffolding 1 Enzyme` workflow from VGP tools. In some cases you may see two `*.cmap.gz`
-files in your input data corresponding to two enzymes used for the Bionano data, and therefore will need to use the 2 enzyme workflow.
+From the input data, we can see that there is a single `*.cmap.gz` file generated using the `DLE-1` enzyme. Therefore, copy the **scaffold_3_bionano_1enzyme** workflow from VGP tools. In some cases you may see two `*.cmap.gz` files in your input data corresponding to two enzymes used for the Bionano data, and therefore you will need to use the _2 enzyme_ workflow.
 
 For the inputs select as follows:
 * CMAP input: `fArcCen1_Saphyr_DLE-1.cmap.gz` under `genomic_data/bionano/`

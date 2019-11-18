@@ -131,8 +131,7 @@ one for each stage of the workflow:
 9. FALCON Unzip stage 4 (unzip_stage_4)
 10. FALCON Unzip stage 5 (unzip_stage_5)
 
-The workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch 
- the workflow.
+The workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.
 
 ![Remember to save your workflow configuration by clicking "Update Workflow with Changes"](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowUpdateWithChanges.png)
 ![Click the Run as Analysis button to launch the workflow.](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/RunAsAnalysisGo.png)
@@ -267,8 +266,9 @@ fArcCen1
 ^   ^
 ```
 
-RUNNING **Jellyfish and GenomeScope**: REMOVE GEMBARCODES FROM 10X READS, proc10xg applet in 
-In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. input 10x, outfolder.
+RUNNING **Jellyfish and GenomeScope**: To run correctly  this workflow, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
+Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
+
 
 
 ## Scaffolding

@@ -248,8 +248,20 @@ fArcCen1
 
 The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz`) and the **Alternate haplotigs** (`cns_h_ctg.fasta.gz`), which will be used in the following steps of the assembly pipeline.
 
--> ADD CREATE INTERMEDIATES FOLDER AND CHANGE NAMES
+These two files must to be renamed using the convention of the VGP pipeline. To do this, first select the respective file and then click the pencil button that appears at the right to edit the name. In this example the name should be `fArcCen1_c1.fasta.gz` for the **Primary contigs** file, and `fArcCen1_c2.fasta.gz` for the **Alternate haplotigs** file.
 
+Next, it is required that every intermediate assembly produced during the pipeline is placed in a specific folder. Navigate to the `assembly_vgp_standard_1.6` folder and click the green button `New Folder` to create a folder named `intermediates`. Move the `c1` and `c2` files to the `intermediates` folder by "drag and drop".
+
+The final folder structure should look like this:
+```
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   ├── intermediates
+│   │   ├── fArcCen1_c1.fasta.gz
+│   │   └── fArcCen1_c2.fasta.gz
+.. ..
+
+```
 ## Scaffolding
 
 ### 1. PurgeDups

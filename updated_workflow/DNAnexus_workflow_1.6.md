@@ -258,7 +258,7 @@ The final folder structure should look like this:
 fArcCen1
 ├── assembly_vgp_standard_1.6
 │   └── intermediates
-│       └── falcon_unzip
+│       ├── falcon_unzip
 │       │   └── ...
 │       ├── fArcCen1_c1.fasta.gz
 │       └── fArcCen1_c2.fasta.gz
@@ -273,7 +273,7 @@ Once the task is finished, click the green button `Start Analysis` and search th
 
 ## Scaffolding
 
-### 1. Purge Haplotigs
+### 1. Purge Dups
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 
@@ -281,7 +281,7 @@ In your working project, click the green button `+ Add Data` and search and sele
 
 Click the workflow to open it in _Run_ mode and create an editable copy of it in case anything is misconfigured or needs to be re-run.
 The inputs for the `purge_dups` stage are the **c1** file `fArcCen1_c1.fasta.gz` and the _PacBio Reads converted to fasta_ from the `bam_to_fasta` folder. Next, the input for the stage `concat c2+p2` is the **c2** file `fArcCen1_c2.fasta.gz`. 
-Finally, under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `purge_dups`  inside the `intermediates` folder and select it as the output folder for the **Scaffold 1 purge_dups** workflow.
+Finally, under `Workflow Actions`, select `Set Output Folder`. Select `intermediates` as the output folder for the **Scaffold 1 purge_dups** workflow.
 
 All stages of the workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.
 
@@ -290,7 +290,7 @@ Once finished, the final output should look like this:
 fArcCen1
 ├── assembly_vgp_standard_1.6
 │   └── intermediates
-│       └── falcon_unzip
+│       ├── falcon_unzip
 │       │   └── ...
 │       ├── fArcCen1_c1.fasta.gz
 │       ├── fArcCen1_c2.fasta.gz
@@ -311,6 +311,7 @@ fArcCen1
 ```
 
 The **Curated primary** contigs should be contained in the file `fArcCen1_p1.fasta.gz`, and the **Alternate combined** haplotigs should be contained in the `fArcCen1_q2.fasta.gz` file.
+Remember to move the `p1` and `q2` files to the `intermediates` folder by "drag and drop".
 
 At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far. To do this, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the applets named `asm_stats` and `busco`, and the workflow named `Evaluation KAT Plot`.
 To obtain the standard assembly statistics run the `asm_stats` applet using as input the respective assembly to be evaluated. In addition, click the gear icon and complete the "Genome size (bp)" field with the size of the genome in base pairs, and `fArcCen1` in the "species code" field. Inside the `assembly_vgp_standard_1.6` folder, create a new folder with the name `evaluation`. Create a folder inside `evaluation` with the name of the assembly stage to be evaluated (for example, `c1`) and select it as the output folder. Finally, click `Run as Analysis...` to launch the applet.
@@ -325,35 +326,45 @@ Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** a
 
 ## 2. Scaff10x Workflow
 
-The Scaff10x workflow performs two rounds of scaffolding with Scaff10x using the 10X Genomics raw reads. Copy the 
-`Scaff10x 2 Rounds` workflow from the `VGP Tools` folder.
+The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
-Select the file inputs for the first step of the workflow:
-* assemble_genome_fastagz: This should be the _purged_ primary contigs from Purge Haplotigs (`curated.fasta.gz`)
+The file inputs for the workflow are:
+* assemble_genome_fastagz: This should be the _Curated primary_ contigs **p1** from Purge Dups (`fArcCen1_p1.fasta.gz`)
 * R1 reads: Under `genomic_data/10x`, all reads containing `_R1_*.fastq`
 * R2 reads: Under `genomic_data/10x`, all reads containing `_R2_*.fastq`
 
-Under the first round parameters, make sure the `is_raw` parameter is specified to `True`. Under both round 1 and round 
-2 parameters you may also specify the output prefix for the output files if desired.
-
-In addition, specify the `Output Folder` for the workflow to `scaffolding` as before. Launch the analysis.
+In addition, specify the `Output Folder` for the workflow to `intermediates` as before. Launch the analysis.
 
 ![Configured Scaff10x workflow](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/Scaff10XRunnable.png)
 
 The final output of scaff10x should look like this:
 ```
-scaffolding/scaff10x/
-├── round1
-│    ├── read-BC_1.fastq.gz
-│    ├── read-BC_2.fastq.gz
-│    └── scaffolds.fasta.gz
-└── round2
-     ├── read-BC_1.fastq.gz
-     ├── read-BC_2.fastq.gz
-     └── scaffolds.fasta.gz
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   └── intermediates
+│       ├── falcon_unzip
+│       │   └── ...
+│       ├── fArcCen1_c1.fasta.gz
+│       ├── fArcCen1_c2.fasta.gz
+│       ├── fArcCen1_p1.fasta.gz
+│       ├── fArcCen1_q2.fasta.gz
+│       ├── purge_dups
+│       │   └── ...
+│       └── scaff10x
+│           ├── round1
+│           │   ├── read-BC_1.fastq.gz
+│           │   ├── read-BC_2.fastq.gz
+│           │   └── scaffolds.fasta.gz
+│           └── round2
+│               ├── read-BC_1.fastq.gz
+│               ├── read-BC_2.fastq.gz
+│               └── scaffolds.fasta.gz
+└── genomic_data
+
 ```
 
 The output under `round2/scaffolds.fasta.gz` corresponds to `fArcCen1_s1.fasta.gz` using the VGP naming convention.
+
 
 ## 3. Bionano Hybrid Scaffolding
 

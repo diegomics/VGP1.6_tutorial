@@ -1,6 +1,6 @@
 NEW VERSION -> work in progress <-
 ==================================
-###### The idea is to use the old as a backbone, so I will start adding things to this: I thinks that this is the easyest way (TCV)
+###### The idea is to use the old as a backbone, so I will start adding things to this: I think that this is the easyest way (TCV)
 ###### `code` and `parameters` and `buttons` and `folder/files structure`
 **workflows** and **important names**
 
@@ -95,7 +95,7 @@ IMPORTANT: All work should be done in the project shared with you. Do **not** cr
 
 ## Falcon and Unzip Assembly
 
-INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
+INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES IT HAS <--- !!
 
 Click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -540,17 +540,17 @@ After running the workflow:
 
 ## Step 6. Freebayes Polishing
 
-Freebayes use the concatenated output of purgedup and the output from salsato polish the ensamble
+Freebayes uses the concatenated output of purgedups and the output from salsa to polish the assembly
 
 Input:
 -s3 + q2 + mitotig: s4
-- Out From SAlSA (I'm not sure about the name now TCV)
+- Out From SALSA (I'm not sure about the name now TCV)
 
 Copy the last version of "Scaffold 5 Arrow Polish"
 
 The First input are the bam files from Pacbio (please don't include *.scraps.bam files)
-As an opcional parameter you could include de *.pbi files from the Pacbio reads (in the same folder than Pacbio reads)
-Then the S4 version of your ensamble and it's ready to submit!
+As an optional parameter you could include the *.pbi files from the Pacbio reads (in the same folder as the Pacbio reads)
+Then the S4 version of your assembly and it is ready to be submitted!
 As seen in the photo:
 
 ![magen](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/Screenshot%20from%202019-11-14%2014-59-10.png)

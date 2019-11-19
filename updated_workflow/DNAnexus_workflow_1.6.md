@@ -1,6 +1,7 @@
 NEW VERSION -> work in progress <-
 ==================================
-###### The idea is to use the old as a backbone, so I will start adding things to this: I think that this is the easyest way (TCV)
+###### The [current VGP tutorial (1.5)](https://github.com/VGP/vgp-assembly/blob/master/tutorials/ScaffoldingWorkflow.md) was used as a backbone.
+These are style guidelines used:
 ###### `code` and `parameters` and `buttons` and `folder/files structure`
 **workflows** and **important names**
 

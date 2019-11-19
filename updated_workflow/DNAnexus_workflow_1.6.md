@@ -10,9 +10,9 @@ These are style guidelines used:
 _Species ID_ and _other names_ and _**Species ID**_
 
 "other names", "tabs"
-
+--
 ###### Comments
-###### [Diego]: I updated and reviewed from the start to the Salsa step.
+[Diego]: I updated and reviewed from the start to the Salsa step.
 
 
 # _fArcCen1_ Assembly Tutorial

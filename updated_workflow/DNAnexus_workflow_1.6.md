@@ -13,7 +13,7 @@ _Species ID_ and _other names_ and _**Species ID**_
 
 --
 ###### Comments
-[Diego]: I updated and reviewed from the start to the Salsa step.
+[Diego]: I updated from the start to the Salsa step, I didn't check the last two steps yet (arrow & freebayes).
 
 
 # _fArcCen1_ Assembly Tutorial

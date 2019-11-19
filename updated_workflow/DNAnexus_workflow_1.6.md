@@ -2,7 +2,7 @@ NEW VERSION -> work in progress <-
 ==================================
 ###### The [current VGP tutorial (1.5)](https://github.com/VGP/vgp-assembly/blob/master/tutorials/ScaffoldingWorkflow.md) was used as a backbone.
 These are style guidelines used:
-###### `code` and `parameters` and `buttons` and `folder/files structure`
+`code` and `parameters` and `buttons` and `folder/files structure`
 **workflows** and **important names**
 
 _Species ID_ and _other names_ and _**Species ID**_

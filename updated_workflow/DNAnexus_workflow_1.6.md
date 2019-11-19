@@ -21,7 +21,7 @@ _Species ID_ and _other names_ and _**Species ID**_
 This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_) using the DNAnexus platform.
 The overall assembly pipeline can be depicted in the following simplified chart:
 
-![DNAnexus assembly chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNAnexus_VGP_pipeline_1.6_chart.png)
+![DNAnexus assembly chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNAnexus_VGP_assembly_1.6_chart.png)
 
 
 IMPORTANT: Remember that your questions are always welcome in training channel of Slack!

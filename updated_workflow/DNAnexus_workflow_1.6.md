@@ -24,11 +24,11 @@ The overall assembly pipeline can be depicted in the following simplified chart:
 ![DNAnexus assembly chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNAnexus_VGP_1.6_chart.png)
 
 
-IMPORTANT: Remember that your questions are always welcome in training channel of Slack!
+IMPORTANT: Remember that your questions are always welcome in the "training" channel of Slack!
 
 ## Getting Started
 
-When assigned an assembly, you will given a **Species ID** for your given genome (in this example _**fArcCen1**_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
+When assigned an assembly, you will be given a **Species ID** for your given genome (in this example _**fArcCen1**_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.
 
 The root folder of the project will have the _Species ID_ name (_fArcCen1_) and contain the following folders and files:
 
@@ -101,7 +101,7 @@ IMPORTANT: All work should be done in the project shared with you. Do **not** cr
 
 ## Falcon and Unzip Assembly
 
-INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES IT HAS <--- !!
+INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WHICH STAGES IT HAS <--- !!
 
 Click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -113,7 +113,7 @@ Before configuring the workflow, it is good practice to create an editable copy 
 
 Look through the workflow to make sure all instances and inputs are configured correctly. Please check the following as they tend to be misconfigured:
 
-. Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack.
+Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack.
 
 Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue window to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
 
@@ -272,7 +272,7 @@ fArcCen1
 
 ```
 
-**RUNNING _Jellyfish and GenomeScope_:** To run correctly  this workflow, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
+**RUNNING _Jellyfish and GenomeScope_:** To run this workflow correctly, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
 Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
 
 **Transfering to S3:** After being sure that each step finished correctly, the stats were checked and the files placed in their respective correct directories, it is a good practice to move the data to the VGP storage in AWS. The data will transfer and a symbolic link will be created to keep files functional and accesible. 

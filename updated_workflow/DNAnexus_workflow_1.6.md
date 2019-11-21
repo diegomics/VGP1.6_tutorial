@@ -32,8 +32,8 @@ But in order to achieve that consistency, the name of the workflows should be up
 
 # _fArcCen1_ Assembly Tutorial
 
-This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_) using the DNAnexus platform.
-The overall assembly pipeline can be depicted in the following simplified chart:
+This tutorial covers the assembly of the fish species [Flier Cyclid](https://vgp.github.io/genomeark/Archocentrus_centrarchus) (_Archocentrus centrarchus_) using the [DNAnexus platform](https://platform.dnanexus.com/).
+The overall assembly pipeline can be depicted in the following simplified chart (for a general chart, click [here]()):
 
 ![DNAnexus assembly chart 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNAnexus_VGP_1.6_chart.png)
 

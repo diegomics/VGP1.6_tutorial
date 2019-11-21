@@ -19,8 +19,10 @@ _Species ID_ and _other names_ and _**Species ID**_
 Getting Started
 A. Assembly:
 1. Falcon and Unzip. 2. Purge Dups.
-B. Scaffolding: 1. 10X. 2. Bionano hybrid. 3. Salsa HiC.
-C. Polishing: 1. Arrow. 2. Longranger Freebayes.
+B. Scaffolding:
+1. 10X. 2. Bionano hybrid. 3. Salsa HiC.
+C. Polishing:
+1. Arrow. 2. Longranger Freebayes.
 Final Checks
 
 But in order to achieve that consistency, the name of the workflows should be updated to, for instance, Assembly_2_purge_dups, Scaffolding_3_Salsa_HiC, Polishing_1_Arrow, and so on. What do you think?

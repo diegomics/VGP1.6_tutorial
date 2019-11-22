@@ -292,8 +292,10 @@ Click the workflow to open it in _Run_ mode and create an editable copy of it in
 
 ![Purge Dups workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/purge_dups_workflow.png)
 
+The inputs for the workflow are:
+* For the `purge_dups` stage: the **c1** file `fArcCen1_c1.fasta.gz` and the _PacBio Reads converted to fasta_ from the `bam_to_fasta` folder
+* For the `concat c2+p2` stage: the **c2** file `fArcCen1_c2.fasta.gz`
 
-The inputs for the `purge_dups` stage are the **c1** file `fArcCen1_c1.fasta.gz` and the _PacBio Reads converted to fasta_ from the `bam_to_fasta` folder. Next, the input for the stage `concat c2+p2` is the **c2** file `fArcCen1_c2.fasta.gz`. 
 Finally, under `Workflow Actions`, select `Set Output Folder`. Select `intermediates` as the output folder for the **Scaffold 1 purge_dups** workflow.
 
 All stages of the workflow should now be in the "Runnable" state. Before running, make sure to save your workflow changes (including input specification) by selecting `Workflow Actions` and selecting `Update workflow with changes`. This will make it easier to modify and relaunch the workflow should any failures occur. Finally, click `Run as Analysis...` to launch the workflow.

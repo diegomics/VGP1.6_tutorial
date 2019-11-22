@@ -324,7 +324,7 @@ fArcCen1
 
 ```
 
-The **Curated primary** contigs should be contained in the file `fArcCen1_p1.fasta.gz`, and the **Alternate combined** haplotigs should be contained in the `fArcCen1_q2.fasta.gz` file.
+The **Purged primary** contigs should be contained in the file `fArcCen1_p1.fasta.gz`, and the **Alternate combined** haplotigs should be contained in the `fArcCen1_q2.fasta.gz` file.
 Remember to move the `p1` and `q2` files to the `intermediates` folder by "drag and drop".
 
 **!)** At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far. To do this, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the applets named `asm_stats` and `busco`, and the workflow named `Evaluation KAT Plot`.
@@ -343,7 +343,7 @@ Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** a
 The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 The inputs for the workflow are:
-* `assemble_genome_fastagz`: the _Curated primary_ contigs file **p1** from Purge Dups (`fArcCen1_p1.fasta.gz`)
+* `assemble_genome_fastagz`: the _Purged primary_ contigs file **p1** from Purge Dups (`fArcCen1_p1.fasta.gz`)
 * `scaff_R1_fastqgz`: all reads containing `_R1_*.fastq` in the `10x` folder
 * `scaff_R2_fastqgz`: all reads containing `_R2_*.fastq` in the `10x` folder
 

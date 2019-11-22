@@ -401,9 +401,9 @@ From the input data, we can see that there is a single `*.cmap.gz` file generate
 
 ![Bionano workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/bionano_workflow.png)
 
-For the inputs select as follows:
-* CMAP input: `fArcCen1_Saphyr_DLE-1.cmap.gz` under `genomic_data/bionano/`
-* FASTA input: `fArcCen1_s1.fasta.gz`
+The inputs for the workflow are:
+* `Merged refineFinal CMAP file`: the `fArcCen1_Saphyr_DLE-1.cmap.gz` from `genomic_data/bionano/` folder
+* `FASTA or CMAP file from NGS`: the scaffolds file `fArcCen1_s1.fasta.gz`
 
 As before, specify the workflow output folder to `intermediates`. A `bionano` folder will be automatically created under that.
 
@@ -456,7 +456,8 @@ Remember to move the `s2` file the `intermediates` folder by "drag and drop".
 
 ## Step 4. Salsa Scaffolding
 
-Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data: It will be located under the "genomic_data" folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
+Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data: It will be located under the `genomic_data` folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
+
 ```
 fArcCen1
 └── genomic_data
@@ -475,7 +476,7 @@ fArcCen1
 ```
 
 In addition to the input files, you will need to know the restriction enzymes used to generate the data. For `fArcCen1`,
-the sequences are `GATC`.
+the sequences are `GATC` since the restriction enzyme employed was MboI.
 
 Copy the last version of the **scaffold_4_salsa** workflow into your project. The workflow performs the following steps:
 

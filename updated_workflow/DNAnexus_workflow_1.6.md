@@ -13,7 +13,7 @@ _Species ID_ and _other names_ and _**Species ID**_
 
 --
 ###### COMMENTS
-[Diego]: ~~I updated from the start to the Salsa step, I didn't check the last two steps yet (arrow & freebayes).~~
+~~[Diego]: I updated from the start to the Salsa step, I didn't check the last two steps yet (arrow & freebayes).~~
 
 [Diego]: For consistency, I would divide the text in:
 

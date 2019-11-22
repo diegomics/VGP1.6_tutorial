@@ -38,7 +38,7 @@ The overall assembly pipeline can be depicted in the following simplified chart 
 ![DNAnexus assembly diagram 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNAnexus_VGP_1.6_diagram.png)
 
 
-IMPORTANT: Remember that your questions are always welcome in the "training" channel of Slack!
+IMPORTANT: Remember that your questions are always welcome in the ["training" channel of Slack](https://genomeark.slack.com/archives/CE7FU8YAC)!
 
 ## Getting Started
 

@@ -260,6 +260,7 @@ These two files must be renamed using the convention of the VGP pipeline. To do 
 Next, it is required that every intermediate assembly produced during the pipeline is placed in a specific folder. Move the **c1** and **c2** files to the `intermediates` folder by "drag and drop".
 
 The final folder structure should look like this:
+
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
@@ -269,7 +270,6 @@ fArcCen1
 │       ├── fArcCen1_c1.fasta.gz
 │       └── fArcCen1_c2.fasta.gz
 └── genomic_data
-
 ```
 
 **RUNNING _Jellyfish and GenomeScope_:** To run this workflow correctly, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
@@ -277,7 +277,6 @@ Once the task is finished, click the green button `Start Analysis` and search th
 
 **Transfering to S3:** After being sure that each step finished correctly, the stats were checked and the files placed in their respective correct directories, it is a good practice to move the data to the VGP storage in AWS. The data will transfer and a symbolic link will be created to keep files functional and accesible. 
 In your working project, click the menu "TOOLS" and select "Tool Library", next search and select the applet **DNAnexus to VGP S3 Exporter**. Select the files generated in the finished step in order to transfer them.
-
 
 
 ## Scaffolding
@@ -345,8 +344,8 @@ The next step of the pipeline consist in two rounds of scaffolding using the 10X
 
 The inputs for the workflow are:
 * `assemble_genome_fastagz`: the _Curated primary_ contigs file **p1** from Purge Dups (`fArcCen1_p1.fasta.gz`)
-* `scaff_R1_fastqgz`: all reads containing `_R1_*.fastq` in the `genomic_data/10x` folder
-* `scaff_R2_fastqgz`: all reads containing `_R2_*.fastq` in the `genomic_data/10x` folder
+* `scaff_R1_fastqgz`: all reads containing `_R1_*.fastq` in the `10x` folder
+* `scaff_R2_fastqgz`: all reads containing `_R2_*.fastq` in the `10x` folder
 
 In addition, specify the `Output Folder` for the workflow to `intermediates` as before. Launch the analysis.
 
@@ -492,7 +491,7 @@ The inputs for the workflow are:
 * For the `Salsa` stage: select the gear icon and specify the HiC restriction enzyme (`GATC`) as the "Restriction enzyme bases" input
 * For the `concat s3+q2+mito` stage: the **Alternate combined** haplotigs contained in the file `fArcCen1_q2.fasta.gz` for `q2 input`. If a mitogenome is available for this species, it should be incorporated as input in this stage
 
-In addition, Click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`. Remember to configure `intermediates` as the output folder and save the workflow copy before launch the analysis.
+In addition, click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`. Remember to configure `intermediates` as the output folder and save the workflow copy before launch the analysis.
 
 The final output should look like this:
 
@@ -535,43 +534,174 @@ Remember to move the `s3` and `s4` files the `intermediates` folder by "drag and
 
 The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
-![Arrow workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/arrow_workflow.png)
-
 The workflow performs the following steps:
 1. Align the PacBio reads to the assembly using Minimap2.
 2. Polish of scaffolds using Arrow.
 
-Inputs: 
-- PacBio sequences (`subreads.bam`) 
-- s4.fasta.gz
+![Arrow workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/arrow_workflow.png)
+
+The inputs for the workflow are:
+* `Reads`: the _PacBio Sequel Reads_ (`subreads.bam`) from the `pacbio` folder
+* `Reference genome`: the scaffolds file `fArcCen1_s4.fasta.gz`
+
+Remember to configure `intermediates` as the output folder and save the workflow copy before launch the analysis.
+
+The final output should look like this:
+
+```
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   └── intermediates
+│       ├── arrow
+│       │   ├── mapped_reads
+│       │   │   └── ..
+│       │   └── polished_output
+│       │       ├── fArcCen1_t1.fasta.gz
+│       │       └── ..
+│       ├── bionano
+│       │   └── ...
+│       ├── hic
+│       │   └── ...
+│       ├── falcon_unzip
+│       │   └── ...
+│       ├── fArcCen1_c1.fasta.gz
+│       ├── fArcCen1_c2.fasta.gz
+│       ├── fArcCen1_p1.fasta.gz
+│       ├── fArcCen1_q2.fasta.gz
+│       ├── fArcCen1_s1.fasta.gz
+│       ├── fArcCen1_s2.fasta.gz
+│       ├── fArcCen1_s3.fasta.gz
+│       ├── fArcCen1_s4.fasta.gz
+│       ├── purge_dups
+│       │   └── ...
+│       └── scaff10x
+│           └── ...
+└── genomic_data
 
 
+```
 
-For configuring the inputs, select as follows:
-* Add the PacBio data (`genomic_data/pacbio/*subreads.bam`, no `scraps.bam`!)
-* Add s4.fasta.gz
+Remember to move the `t1` file the `intermediates` folder by "drag and drop".
 
-After running the workflow:
-- rename the output file in folder `polished_output/*_s4.arrow.fasta.gz` to `_t1.fasta.gz` and move it into the intermediates folder 
-- generate assembly statistics with the tool `asm-stats` 
-- export the data using the tool `DNAnexus to VGP S3 Exporter`
 
 
 ## Step 6. Freebayes Polishing
 
-Freebayes uses the concatenated output of purgedups and the output from salsa to polish the assembly
+INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 
-Input:
--s3 + q2 + mitotig: s4
-- Out From SALSA (I'm not sure about the name now TCV)
+Copy the last version of the **Scaffold 6 Longranger Freebayes Polish** workflow from VGP tools into your project as explained before.
 
-Copy the last version of "Scaffold 5 Arrow Polish"
+![Longranger Freebayes workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/longranger_freebayes_workflow.png)
 
-The First input are the bam files from Pacbio (please don't include *.scraps.bam files)
-As an optional parameter you could include the *.pbi files from the Pacbio reads (in the same folder as the Pacbio reads)
-Then the S4 version of your assembly and it is ready to be submitted!
-As seen in the photo:
+The inputs for the workflow are:
+* For the `10X Longranger Reference Builder` stage: the polished scaffolds file `fArcCen1_t1.fasta.gz`
+* For the `10X Longranger Align Only Analysis` stage: all the `fastq` reads in the `10x` folder
 
-![magen](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/Screenshot%20from%202019-11-14%2014-59-10.png)
+Remember to configure `intermediates` as the output folder and save the workflow copy before launch the analysis.
+
+
+The final output should look like this:
+
+```
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   └── intermediates
+│       ├── arrow
+│       │   └── ..
+│       ├── bionano
+│       │   └── ...
+│       ├── hic
+│       │   └── ...
+│       ├── falcon_unzip
+│       │   └── ...
+│       ├── fArcCen1_c1.fasta.gz
+│       ├── fArcCen1_c2.fasta.gz
+│       ├── fArcCen1_p1.fasta.gz
+│       ├── fArcCen1_q2.fasta.gz
+│       ├── fArcCen1_s1.fasta.gz
+│       ├── fArcCen1_s2.fasta.gz
+│       ├── fArcCen1_s3.fasta.gz
+│       ├── fArcCen1_s4.fasta.gz
+│       ├── fArcCen1_t1.fasta.gz
+│       ├── longranger_freebayes_round_1
+│       │   ├── 10x_longranger
+│       │   │   └── ..
+│       │   ├── freebayes
+│       │   │   ├── fArcCen1_t2.fasta.gz
+│       │   │   └── ..
+│       │   └── QV
+│       │       └── ..
+│       ├── longranger_freebayes_round_2
+│       │   ├── 10x_longranger
+│       │   │   └── ..
+│       │   ├── freebayes
+│       │   │   ├── fArcCen1_t3.fasta.gz
+│       │   │   └── ..
+│       │   ├── QV
+│       │   │   ├── qv_report.txt
+│       │   │   └── ..
+│       │   └── stats
+│       │   │   ├── fArcCen1_alt.asm.20191231.fasta.gz
+│       │   │   ├── fArcCen1_pri.asm..20191231.fasta.gz
+│       │   │   └── ..
+│       ├── purge_dups
+│       │   └── ...
+│       └── scaff10x
+│           └── ...
+└── genomic_data
+
+
+```
+
+Remember to move the `t2` and `t3` files the `intermediates` folder by "drag and drop".
+
+Move the **final primary and alternative assembly** files to the `assembly_vgp_standard_1.6` folder by "drag and drop".
+
+
+## Final Checks
+
+INSERT A BRIEF SECTION WITH SOME FINAL CHECKS <--- !!
+
+The final folder structure should look like this:
+
+```
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   ├── fArcCen1_alt.asm.20191231.fasta.gz
+│   ├── fArcCen1_pri.asm.20191231.fasta.gz
+│   └── intermediates
+│       ├── arrow
+│       │   └── ..
+│       ├── bionano
+│       │   └── ...
+│       ├── hic
+│       │   └── ...
+│       ├── falcon_unzip
+│       │   └── ...
+│       ├── fArcCen1_c1.fasta.gz
+│       ├── fArcCen1_c2.fasta.gz
+│       ├── fArcCen1_p1.fasta.gz
+│       ├── fArcCen1_q2.fasta.gz
+│       ├── fArcCen1_s1.fasta.gz
+│       ├── fArcCen1_s2.fasta.gz
+│       ├── fArcCen1_s3.fasta.gz
+│       ├── fArcCen1_s4.fasta.gz
+│       ├── fArcCen1_t1.fasta.gz
+│       ├── fArcCen1_t2.fasta.gz
+│       ├── fArcCen1_t3.fasta.gz
+│       ├── longranger_freebayes_round_1
+│       │   └── ..
+│       ├── longranger_freebayes_round_2
+│       │   └── ..
+│       ├── purge_dups
+│       │   └── ...
+│       └── scaff10x
+│           └── ...
+└── genomic_data
+```
+
+The required QV value can be obtained from `qv_report.txt` file in the `longranger_freebayes_round_2/QV` folder.
+
+
 
 

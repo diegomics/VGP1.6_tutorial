@@ -289,6 +289,10 @@ INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 1 purge_dups** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 Click the workflow to open it in _Run_ mode and create an editable copy of it in case anything is misconfigured or needs to be re-run.
+
+![Purge Dups workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/purge_dups_workflow.png)
+
+
 The inputs for the `purge_dups` stage are the **c1** file `fArcCen1_c1.fasta.gz` and the _PacBio Reads converted to fasta_ from the `bam_to_fasta` folder. Next, the input for the stage `concat c2+p2` is the **c2** file `fArcCen1_c2.fasta.gz`. 
 Finally, under `Workflow Actions`, select `Set Output Folder`. Select `intermediates` as the output folder for the **Scaffold 1 purge_dups** workflow.
 

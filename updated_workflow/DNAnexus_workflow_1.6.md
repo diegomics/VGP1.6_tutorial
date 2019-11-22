@@ -167,7 +167,6 @@ fArcCen1
 │           ├── bam_to_fasta
 │           │   ├── m#####_######_######.subreads.fasta.gz
 │           │   ├── m#####_######_######.subreads.fasta.gz
-│           │   ├── m#####_######_######.subreads.fasta.gz
 │           │   └── ...
 │           ├── stage_0
 │           │   ├── read_counts.csv
@@ -182,14 +181,9 @@ fArcCen1
 │           │   ├── mer_counts.summary.txt
 │           │   ├── out.####.fasta.gz
 │           │   ├── out.####.fasta.gz
-│           │   ├── out.####.fasta.gz
-│           │   ├── out.####.fasta.gz
-│           │   ├── out.####.fasta.gz
 │           │   ├── ...
 │           │   ├── preads_rep.tar.gz
 │           │   ├── preads_tan.tar.gz
-│           │   ├── raw_reads.###.las
-│           │   ├── raw_reads.###.las
 │           │   ├── raw_reads.###.las
 │           │   ├── raw_reads.###.las
 │           │   ├── ...
@@ -198,7 +192,6 @@ fArcCen1
 │           │   ├── read_counts.csv
 │           │   └── read_length_distribution.pdf
 │           ├── stage_2
-│           │   ├── preads.###.las
 │           │   ├── preads.###.las
 │           │   ├── preads.###.las
 │           │   └── ...
@@ -227,19 +220,12 @@ fArcCen1
 │           │   ├── read_to_contig_map.gz
 │           │   ├── reads_fastas_##.tar.gz
 │           │   ├── reads_fastas_##.tar.gz
-│           │   ├── reads_fastas_##.tar.gz
-│           │   ├── reads_fastas_##.tar.gz
 │           │   ├── ...
-│           │   ├── ref_fastas_###.tar.gz
 │           │   ├── ref_fastas_###.tar.gz
 │           │   ├── ref_fastas_###.tar.gz
 │           │   └── ...
 │           ├── unzip_stage_2
 │           │   ├── all_phased_reads.gz
-│           │   ├── rid_to_phase.###.tar.gz
-│           │   ├── rid_to_phase.###.tar.gz
-│           │   ├── rid_to_phase.###.tar.gz
-│           │   ├── rid_to_phase.###.tar.gz
 │           │   ├── rid_to_phase.###.tar.gz
 │           │   ├── rid_to_phase.###.tar.gz
 │           │   └── ...
@@ -253,8 +239,6 @@ fArcCen1
 │           │   └── sg.gfa.gz
 │           ├── unzip_stage_4
 │           │   ├── contig_groups.json
-│           │   ├── mappedread_###.tar.gz
-│           │   ├── mappedread_###.tar.gz
 │           │   ├── mappedread_###.tar.gz
 │           │   ├── mappedread_###.tar.gz
 │           │   └── ...
@@ -326,9 +310,9 @@ fArcCen1
 │           │   ├── fArcCen1_p1.fasta.gz
 │           │   └── ...
 │           ├── read_counts.csv
-│           ├── read_counts.csv
+│           ├── ..
 │           ├── read_length_distribution.pdf
-│           └── read_length_distribution.pdf
+│           └── ..
 └── genomic_data
 
 ```

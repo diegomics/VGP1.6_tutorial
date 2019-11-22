@@ -397,7 +397,7 @@ fArcCen1
     └── ...  
 ```
 
-From the input data, we can see that there is a single `*.cmap.gz` file generated using the `DLE-1` enzyme. Therefore, copy the **scaffold_3_bionano_1enzyme** workflow from VGP tools. In some cases you may see two `*.cmap.gz` files in your input data corresponding to two enzymes used for the Bionano data, and therefore you will need to use the _2 enzyme_ workflow.
+From the input data, we can see that there is a single `*.cmap.gz` file generated using the `DLE-1` enzyme. Therefore, copy the **scaffold_3_bionano_1enzyme** workflow from VGP tools as explained before. In some cases you may see two `*.cmap.gz` files in your input data corresponding to two enzymes used for the Bionano data, and therefore you will need to use the _2 enzyme_ workflow.
 
 ![Bionano workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/bionano_workflow.png)
 
@@ -478,7 +478,7 @@ fArcCen1
 In addition to the input files, you will need to know the restriction enzymes used to generate the data. For `fArcCen1`,
 the sequences are `GATC` since the restriction enzyme employed was MboI.
 
-Copy the last version of the **scaffold_4_salsa** workflow into your project. The workflow performs the following steps:
+Copy the last version of the **scaffold_4_salsa** workflow from VGP tools into your project as explained before. The workflow performs the following steps:
 
 1. Align the HiC reads using the Arima mapping pipeline
 2. Run Salsa2 on aligned reads and the s2.fasta.gz scaffold
@@ -529,17 +529,23 @@ fArcCen1
 
 ```
 
+Remember to move the `s3` and `s4` files the `intermediates` folder by "drag and drop".
+
 ## Step 5. Arrow Polishing
 
-Arrow uses PacBio sequences (`subreads.bam`) to polish the scaffolds.
+The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
+
+![Arrow workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/arrow_workflow.png)
+
+The workflow performs the following steps:
+1. Align the PacBio reads to the assembly using Minimap2.
+2. Polish of scaffolds using Arrow.
 
 Inputs: 
 - PacBio sequences (`subreads.bam`) 
 - s4.fasta.gz
 
-Copy the `Scaffold 5 Arrow Polish 2019-Sep-14` workflow into your project.The workflow performs the following steps:
-1. Align the PacBio reads to the assembly using Minimap2.
-2. Polish scaffolds using Arrow.
+
 
 For configuring the inputs, select as follows:
 * Add the PacBio data (`genomic_data/pacbio/*subreads.bam`, no `scraps.bam`!)

@@ -484,13 +484,15 @@ Copy the last version of the **scaffold_4_salsa** workflow into your project. Th
 2. Run Salsa2 on aligned reads and the s2.fasta.gz scaffold
 3. Concatenate the output with the Haplotigs from FALCON Unzip
 
-For configuring the inputs, select as follows:
-* Under the `BWA FASTA Indexer` stage, specify the scaffolds file `fArcCen1_s2.fasta.gz` for the `Genome` input.
-* Under the `Arima mapping` stage, specify the paired end HiC for the `Forward Reads` (R1) and `Reverse Reads` (R2) inputs. 
-* Under the `Salsa` stage, select the gear icon, and specify the HiC restriction enzyme (`GATC`) as the "Restriction enzyme bases" input.
-* Under the `concat s3+q2+mito` stage, select the **Alternate combined** haplotigs contained in the file `fArcCen1_q2.fasta.gz`. If a mitogenome is available for this species, it should be incorporated as input in this stage.
-* Click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`
-* Configure `intermediates` as the output folder.
+![New Salsa workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/new_salsa_workflow.png)
+
+The inputs for the workflow are:
+* For the `BWA FASTA Indexer` stage: the scaffolds file `fArcCen1_s2.fasta.gz` for the `Genome` input
+* For the `Arima mapping` stage: the HiC reads from the `phase` folder, _R1_ reads for the `Forward Reads` input and _R2_ reads for the `Reverse Reads` input
+* For the `Salsa` stage: select the gear icon and specify the HiC restriction enzyme (`GATC`) as the "Restriction enzyme bases" input
+* For the `concat s3+q2+mito` stage: the **Alternate combined** haplotigs contained in the file `fArcCen1_q2.fasta.gz` for `q2 input`. If a mitogenome is available for this species, it should be incorporated as input in this stage
+
+In addition, Click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`. Remember to configure `intermediates` as the output folder.
 
 Here is what your configured workflow will look like:
 

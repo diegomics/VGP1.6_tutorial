@@ -343,10 +343,10 @@ Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** a
 
 The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
-The file inputs for the workflow are:
-* assemble_genome_fastagz: This should be the _Curated primary_ contigs **p1** from Purge Dups (`fArcCen1_p1.fasta.gz`)
-* R1 reads: Under `genomic_data/10x`, all reads containing `_R1_*.fastq`
-* R2 reads: Under `genomic_data/10x`, all reads containing `_R2_*.fastq`
+The inputs for the workflow are:
+* assemble_genome_fastagz: the _Curated primary_ contigs file **p1** from Purge Dups (`fArcCen1_p1.fasta.gz`)
+* scaff_R1_fastqgz: all reads containing `_R1_*.fastq` in the `genomic_data/10x` folder
+* scaff_R2_fastqgz: all reads containing `_R2_*.fastq` in the `genomic_data/10x` folder
 
 In addition, specify the `Output Folder` for the workflow to `intermediates` as before. Launch the analysis.
 

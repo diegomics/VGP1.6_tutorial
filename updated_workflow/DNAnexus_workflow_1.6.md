@@ -257,7 +257,7 @@ The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz
 
 These two files must be renamed using the convention of the VGP pipeline. To do this, first select the respective file and then click the pencil button that appears at the right to edit the name. In this example the name should be `fArcCen1_c1.fasta.gz` for the **Primary contigs** file, and `fArcCen1_c2.fasta.gz` for the **Alternate haplotigs** file.
 
-Next, it is required that every intermediate assembly produced during the pipeline is placed in a specific folder. Move the `c1` and `c2` files to the `intermediates` folder by "drag and drop".
+Next, it is required that every intermediate assembly produced during the pipeline is placed in a specific folder. Move the **c1** and **c2** files to the `intermediates` folder by "drag and drop".
 
 The final folder structure should look like this:
 ```
@@ -560,6 +560,5 @@ Then the S4 version of your assembly and it is ready to be submitted!
 As seen in the photo:
 
 ![magen](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/Screenshot%20from%202019-11-14%2014-59-10.png)
-
 
 

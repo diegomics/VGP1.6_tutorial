@@ -399,6 +399,8 @@ fArcCen1
 
 From the input data, we can see that there is a single `*.cmap.gz` file generated using the `DLE-1` enzyme. Therefore, copy the **scaffold_3_bionano_1enzyme** workflow from VGP tools. In some cases you may see two `*.cmap.gz` files in your input data corresponding to two enzymes used for the Bionano data, and therefore you will need to use the _2 enzyme_ workflow.
 
+![Bionano workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/bionano_workflow.png)
+
 For the inputs select as follows:
 * CMAP input: `fArcCen1_Saphyr_DLE-1.cmap.gz` under `genomic_data/bionano/`
 * FASTA input: `fArcCen1_s1.fasta.gz`

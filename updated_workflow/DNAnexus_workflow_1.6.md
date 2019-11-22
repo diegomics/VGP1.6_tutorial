@@ -492,11 +492,7 @@ The inputs for the workflow are:
 * For the `Salsa` stage: select the gear icon and specify the HiC restriction enzyme (`GATC`) as the "Restriction enzyme bases" input
 * For the `concat s3+q2+mito` stage: the **Alternate combined** haplotigs contained in the file `fArcCen1_q2.fasta.gz` for `q2 input`. If a mitogenome is available for this species, it should be incorporated as input in this stage
 
-In addition, Click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`. Remember to configure `intermediates` as the output folder.
-
-Here is what your configured workflow will look like:
-
-![Configured Salsa workflow](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/SalsaRunnable.png)
+In addition, Click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`. Remember to configure `intermediates` as the output folder and save the workflow copy before launch the analysis.
 
 The final output should look like this:
 
@@ -507,8 +503,8 @@ fArcCen1
 │       ├── bionano
 │       │   └── ...
 │       ├── hic
-│       │   ├── ...
-│       │   ├── ...
+│       │   ├── fArcCen1_s3.fasta.gz
+│       │   ├── fArcCen1_s4.fasta.gz
 │       │   ├── ...
 │       │   ├── ...
 │       │   ├── ...

@@ -453,7 +453,7 @@ fArcCen1
 Remember to move the **s2** file to the `intermediates` folder by "drag and drop".
 
 
-## Step 4. Salsa Scaffolding
+## 4. Salsa Scaffolding
 
 Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data: It will be located under the `genomic_data` folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
 
@@ -530,7 +530,7 @@ fArcCen1
 
 Remember to move the **s3** and **s4** files to the `intermediates` folder by "drag and drop".
 
-## Step 5. Arrow Polishing
+## 5. Arrow Polishing
 
 The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -587,7 +587,7 @@ Remember to move the **t1** file to the `intermediates` folder by "drag and drop
 
 
 
-## Step 6. Freebayes Polishing
+## 6. Freebayes Polishing
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 

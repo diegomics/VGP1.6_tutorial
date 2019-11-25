@@ -450,7 +450,7 @@ fArcCen1
 
 ```
 
-Remember to move the `s2` file the `intermediates` folder by "drag and drop".
+Remember to move the **s2** file the `intermediates` folder by "drag and drop".
 
 
 ## Step 4. Salsa Scaffolding
@@ -479,9 +479,9 @@ the sequences are `GATC` since the restriction enzyme employed was MboI.
 
 Copy the last version of the **scaffold_4_salsa** workflow from VGP tools into your project as explained before. The workflow performs the following steps:
 
-1. Align the HiC reads using the Arima mapping pipeline
-2. Run Salsa2 on aligned reads and the s2.fasta.gz scaffold
-3. Concatenate the output with the Haplotigs from FALCON Unzip
+1. Align the _HiC reads_ using the Arima mapping pipeline
+2. Run _Salsa2_ on aligned reads and the `s2.fasta.gz` scaffolds file
+3. Concatenate the output with the _Haplotigs_ from _FALCON Unzip_
 
 ![New Salsa workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/new_salsa_workflow.png)
 
@@ -528,15 +528,15 @@ fArcCen1
 
 ```
 
-Remember to move the `s3` and `s4` files the `intermediates` folder by "drag and drop".
+Remember to move the **s3** and **s4** files the `intermediates` folder by "drag and drop".
 
 ## Step 5. Arrow Polishing
 
 The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 The workflow performs the following steps:
-1. Align the PacBio reads to the assembly using Minimap2.
-2. Polish of scaffolds using Arrow.
+1. Align the _PacBio reads_ to the assembly using _Minimap2_
+2. Polish of scaffolds using _Arrow_
 
 ![Arrow workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/arrow_workflow.png)
 
@@ -583,7 +583,7 @@ fArcCen1
 
 **!)** At this point, you  should check for an increase in the _contig N50_ when compared with **s3**, as a sign of the gap-filling efficiency.
 
-Remember to move the `t1` file the `intermediates` folder by "drag and drop".
+Remember to move the **t1** file the `intermediates` folder by "drag and drop".
 
 
 
@@ -655,7 +655,7 @@ fArcCen1
 
 ```
 
-Remember to move the `t2` and `t3` files the `intermediates` folder by "drag and drop".
+Remember to move the **t2** and **t3** files the `intermediates` folder by "drag and drop".
 
 Move the **final primary and alternative assembly** files to the `assembly_vgp_standard_1.6` folder by "drag and drop".
 

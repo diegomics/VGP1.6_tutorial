@@ -581,6 +581,8 @@ fArcCen1
 
 ```
 
+**!)** At this point, you  should check for an increase in the _contig N50_ when compared with **s3**, as a sign of the gap-filling efficiency.
+
 Remember to move the `t1` file the `intermediates` folder by "drag and drop".
 
 

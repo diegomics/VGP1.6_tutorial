@@ -39,14 +39,23 @@ The overall assembly pipeline can be depicted in the following simplified diagra
 
 
 Index:
+
 . [Getting Started](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#getting-started)
+
 . [Falcon and Unzip Assembly](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#falcon-and-unzip-assembly)
+
 . [Purge Dups](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#1-purge-dups)
+
 . [10X scaffolding](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#2-10x-scaffolding)
+
 . [Bionano Hybrid Scaffolding](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#3-bionano-hybrid-scaffolding)
+
 . [Salsa Scaffolding](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#4-salsa-scaffolding)
+
 . [Arrow Polishing](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#5-arrow-polishing)
+
 . [Freebayes Polishing](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#6-freebayes-polishing)
+
 . [Final Checks](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#final-checks)
 
 

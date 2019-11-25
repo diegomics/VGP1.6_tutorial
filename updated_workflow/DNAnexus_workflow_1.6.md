@@ -378,7 +378,7 @@ fArcCen1
 ```
 
 The output under `round2/scaffolds.fasta.gz` corresponds to `fArcCen1_s1.fasta.gz` using the VGP naming convention.
-Remember to move the `s1` file the `intermediates` folder by "drag and drop".
+Remember to move the `s1` file to the `intermediates` folder by "drag and drop".
 
 ## 3. Bionano Hybrid Scaffolding
 
@@ -450,7 +450,7 @@ fArcCen1
 
 ```
 
-Remember to move the **s2** file the `intermediates` folder by "drag and drop".
+Remember to move the **s2** file to the `intermediates` folder by "drag and drop".
 
 
 ## Step 4. Salsa Scaffolding
@@ -528,7 +528,7 @@ fArcCen1
 
 ```
 
-Remember to move the **s3** and **s4** files the `intermediates` folder by "drag and drop".
+Remember to move the **s3** and **s4** files to the `intermediates` folder by "drag and drop".
 
 ## Step 5. Arrow Polishing
 
@@ -583,7 +583,7 @@ fArcCen1
 
 **!)** At this point, you  should check for an increase in the _contig N50_ when compared with **s3**, as a sign of the gap-filling efficiency.
 
-Remember to move the **t1** file the `intermediates` folder by "drag and drop".
+Remember to move the **t1** file to the `intermediates` folder by "drag and drop".
 
 
 
@@ -655,7 +655,7 @@ fArcCen1
 
 ```
 
-Remember to move the **t2** and **t3** files the `intermediates` folder by "drag and drop".
+Remember to move the **t2** and **t3** files to the `intermediates` folder by "drag and drop".
 
 Move the **final primary and alternative assembly** files to the `assembly_vgp_standard_1.6` folder by "drag and drop".
 
@@ -703,7 +703,3 @@ fArcCen1
 ```
 
 The required QV value can be obtained from `qv_report.txt` file in the `longranger_freebayes_round_2/QV` folder.
-
-
-
-

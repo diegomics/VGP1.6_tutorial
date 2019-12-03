@@ -112,9 +112,8 @@ fArcCen1
         ├── fArcCen1_DDHiC_R1.fastq.gz
         ├── fArcCen1_DDHiC_R2.fastq.gz
         ├── fArcCen1_S3HiC_R1.fastq.gz
-        └── fArcCen1_S3HiC_R2.fastq.gz
-
-
+        ├── fArcCen1_S3HiC_R1.fastq.gz        
+        └── re_bases.txt
 ```
 
 This includes 4 types of raw data:
@@ -433,6 +432,12 @@ The final output of scaff10x should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   ├── evaluation
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       ├── falcon_unzip
 │       │   └── ...
@@ -452,7 +457,7 @@ fArcCen1
 │               ├── read-BC_2.fastq.gz
 │               └── scaffolds.fasta.gz
 └── genomic_data
-
+    └── ...
 ```
 
 The output under `round2/scaffolds.fasta.gz` corresponds to `fArcCen1_s1.fasta.gz` using the VGP naming convention.
@@ -486,12 +491,19 @@ The inputs for the workflow are:
 
 As before, specify the workflow output folder to `intermediates`. A `bionano` folder will be automatically created under that.
 
-The Bionano tool is prone to hanging if the memory requirements are not met. Therefore, make sure it is running on a large memory instance, such as the `mem3_ssd1_x32` instance. The app is configured to aggressively time out if it does not complete in under 6 hours. If this happens, rerun the analysis on a larger memory instance. Remember that you can always ask your doubts in the Slack channel.
+The Bionano tool is prone to hanging if the memory requirements are not met. Therefore, make sure it is running on a large memory instance, such as the `mem3_ssd1_x32` instance. The app is configured to aggressively time out if it does not complete in under 6 hours. If this happens, rerun the analysis on a larger memory instance. Remember that you can always ask your doubts in the [Slack channel](https://genomeark.slack.com/archives/CE7FU8YAC).
+
 
 Once the app completes, the output should look smilar as follows:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   ├── evaluation
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       ├── bionano
 │       │   ├── bn_pre_cut_projected_ngs_coord_annotations.bed
@@ -527,10 +539,12 @@ fArcCen1
 │       └── scaff10x
 │           └── ...
 └── genomic_data
-
+    └── ...
 ```
 
-Remember to move the **s2** file to the `intermediates` folder by "drag and drop".
+Remember to move the **s2** file `fArcCen1_s2.fasta.gz` to the `intermediates` folder by "drag and drop".
+
+**!)** During the scaffolding steps like this, besides an improvement in the assembly metrics, it is expectable a decrease in the _contig N50_ due to contig break down.
 
 <br/>
 
@@ -551,12 +565,12 @@ fArcCen1
         ├── fArcCen1_DDHiC_R1.fastq.gz
         ├── fArcCen1_DDHiC_R2.fastq.gz
         ├── fArcCen1_S3HiC_R1.fastq.gz
-        └── fArcCen1_S3HiC_R2.fastq.gz
-
+        ├── fArcCen1_S3HiC_R1.fastq.gz
+        └── re_bases.txt
 ```
 
 In addition to the input files, you will need to know the restriction enzymes used to generate the data. For `fArcCen1`,
-the sequences are `GATC` since the restriction enzyme employed was MboI.
+the sequences are `GATC` since the restriction enzyme employed was MboI. This infomation is reported in the `re_bases.txt` file in the folder with the HiC reads.  
 
 Copy the latest version of the **scaffold_4_salsa** workflow from VGP tools into your project as explained before. The workflow performs the following steps:
 
@@ -570,7 +584,10 @@ The inputs for the workflow are:
 * For the `BWA FASTA Indexer` stage: the scaffolds file `fArcCen1_s2.fasta.gz` for the `Genome` input
 * For the `Arima mapping` stage: the HiC reads from the `phase` folder, _R1_ reads for the `Forward Reads` input and _R2_ reads for the `Reverse Reads` input
 * For the `Salsa` stage: select the gear icon and specify the HiC restriction enzyme (`GATC`) as the "Restriction enzyme bases" input
-* For the `concat s3+q2+mito` stage: the **Alternate combined** haplotigs contained in the file `fArcCen1_q2.fasta.gz` for `q2 input`. If a mitogenome is available for this species, it should be incorporated as input in this stage
+* For the `concat s3+q2+mito` stage: the **Alternate combined** haplotigs contained in the file `fArcCen1_q2.fasta.gz` for `q2 input`. If a mitogenome is available for this species, it should be incorporated as input in this stage.
+
+IMPORTANT: You should check for the mitogenome availability in the [VGP GenomeArk website](https://vgp.github.io/genomeark). If it is present, you need to download to your computer, and upload to your DNAnexus project. To do this, click the green button `+ Add Data` and select the file from your computer. If the mitogenome is not available, please ask in in the ["training" channel of the VGP Slack](https://genomeark.slack.com/archives/CE7FU8YAC).
+
 
 In addition, click the gear icon next to the File Concatenator app to specify the output name: `fArcCen1_s4.fasta.gz`. Remember to configure `intermediates` as the output folder and save the workflow copy before launch the analysis.
 
@@ -579,6 +596,12 @@ The final output should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   ├── evaluation
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       ├── bionano
 │       │   └── ...
@@ -605,8 +628,7 @@ fArcCen1
 │       └── scaff10x
 │           └── ...
 └── genomic_data
-
-
+    └── ...
 ```
 
 Remember to move the **s3** and **s4** files to the `intermediates` folder by "drag and drop".
@@ -636,6 +658,12 @@ The final output should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   ├── evaluation
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       ├── arrow
 │       │   ├── mapped_reads
@@ -662,8 +690,7 @@ fArcCen1
 │       └── scaff10x
 │           └── ...
 └── genomic_data
-
-
+    └── ...
 ```
 
 **!)** At this point, you  should check for an increase in the _contig N50_ when compared with **s3**, as a sign of the gap-filling efficiency.
@@ -692,6 +719,12 @@ The final output should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   ├── evaluation
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       ├── arrow
 │       │   └── ..
@@ -736,9 +769,10 @@ fArcCen1
 │       └── scaff10x
 │           └── ...
 └── genomic_data
-
-
+    └── ...
 ```
+
+**!)** You should check for an increase in the QV value after each round, when comparing the `qv_report.txt` file from the folders `longranger_freebayes_round_1/QV` and `longranger_freebayes_round_2/QV`.
 
 Remember to move the **t2** and **t3** files to the `intermediates` folder by "drag and drop".
 
@@ -757,6 +791,12 @@ fArcCen1
 ├── assembly_vgp_standard_1.6
 │   ├── fArcCen1_alt.asm.20191231.fasta.gz
 │   ├── fArcCen1_pri.asm.20191231.fasta.gz
+│   ├── edited_reads
+│   │   └── ...
+│   ├── evaluation
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       ├── arrow
 │       │   └── ..
@@ -786,6 +826,7 @@ fArcCen1
 │       └── scaff10x
 │           └── ...
 └── genomic_data
+    └── ...
 ```
 
 The required QV value can be obtained from `qv_report.txt` file in the `longranger_freebayes_round_2/QV` folder.

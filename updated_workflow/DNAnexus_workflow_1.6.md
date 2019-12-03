@@ -168,6 +168,7 @@ Now, to formally start with the assembly workflow, click the green button `+ Add
 ![DNAnexus working project](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNA_nexus_front.png)
 
 <br/>
+<br/>
 
 In your working project, click the workflow to open it in _Run_ mode.
 
@@ -179,16 +180,22 @@ Before configuring the workflow, it is good practice to create an editable copy 
 
 ![Workflow Actions: Save as Template](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowSaveAsTemplate.png)
 
+<br/>
+
 Look through the workflow to make sure all instances and inputs are configured correctly. Please check the following as it tend to be misconfigured: Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack (for more information about memory and other instances in DNAnexus, click [here](https://github.com/lunfardista/VGP1.6_tutorial/tree/master/updated_workflow/docs/DNAnexus_instances.md)).
 
 Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue window to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
 
 ![BAM to FASTA input](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/BAMtoFASTAinput.png)
 
+<br/>
+
 Under the `Create Raw Reads Dazzler DB` stage, click the gear icon to open the parameters panel and fill in the "Estimated genome size" parameter with the given species' expected genome size. For `fArcCen1`, the estimated genome size is 0.99Gbp, so we fill in `0.99G`. The genome size can be obtained from the [Animal Genome Size Database](http://www.genomesize.com/) or if the species is no available there, can also be estimated by running **Jellyfish and GenomeScope** on the 10x Genomics reads as explained before).
 
 ![Create Raw Reads stage](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/CreateRawReadsConfig.png)
 ![Configure genome size](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/LengthCutoffConfig.png)
+
+<br/>
 
 In addition to selecting parameters, you should specify an output folder for the workflow. Under `Workflow Actions`, select `Set Output Folder`. Navigate to the folder `assembly_vgp_standard_1.6` and create a new folder named `intermediates`. Inside that new folder, create a folder named `falcon_unzip`. Select `falcon_unzip` as the output folder for the **vgp_falcon_and_unzip_assembly_workflow**. All of the output folders for the individual stages should already be configured. When the analysis is complete, there will be a total of 10 subfolders in your specified output folder, one for each stage of the workflow:
 

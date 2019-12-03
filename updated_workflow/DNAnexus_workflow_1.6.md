@@ -309,8 +309,6 @@ In your working project, click the menu "TOOLS" and select "Tool Library", next 
 
 ### 2. Purge Dups
 
-INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
-
 In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 1 purge_dups** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 Click the workflow to open it in _Run_ mode and create an editable copy of it in case anything is misconfigured or needs to be re-run.
@@ -367,7 +365,7 @@ Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** a
 
 ## Scaffolding
 
-## 1. 10X
+### 1. 10X
 
 The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -411,7 +409,7 @@ Remember to move the `s1` file to the `intermediates` folder by "drag and drop".
 
 <br/>
 
-## 2. Bionano
+### 2. Bionano
 
 The next step uses the Bionano assembled CMAP data together with the scaffolds file `fArcCen1_s1.fasta.gz` from the previous step to perform hybrid scaffolding on the primary haplotig.
 
@@ -485,7 +483,7 @@ Remember to move the **s2** file to the `intermediates` folder by "drag and drop
 
 <br/>
 
-## 3. Salsa
+### 3. Salsa
 
 Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data: It will be located under the `genomic_data` folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
 
@@ -566,7 +564,7 @@ Remember to move the **s3** and **s4** files to the `intermediates` folder by "d
 
 ## Polishing
 
-## 5. Arrow
+### 5. Arrow
 
 The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -623,7 +621,7 @@ Remember to move the **t1** file to the `intermediates` folder by "drag and drop
 
 <br/>
 
-## 6. Freebayes
+### 6. Freebayes
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 

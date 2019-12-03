@@ -184,7 +184,7 @@ Before configuring the workflow, it is good practice to create an editable copy 
 
 Look through the workflow to make sure all instances and inputs are configured correctly. Please check the following as it tend to be misconfigured: Under the `Unzip Track Reads` stage, the instance type should be set to `mem4_ssd1_x128`, unless something different is told to you in the training channel of Slack (for more information about memory and other instances in DNAnexus, click [here](https://github.com/lunfardista/VGP1.6_tutorial/tree/master/updated_workflow/docs/DNAnexus_instances.md)).
 
-Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue window to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input.
+Once the workflow is configured, select the `BAM Files` input under the `BAM to FASTA` stage. This will pop up a dialogue window to select input files. Select the _PacBio Sequel Reads_ from the `pacbio` folder as input (as a good practice, please always select the corresponding files by locating them in their respective folders).
 
 ![BAM to FASTA input](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/BAMtoFASTAinput.png)
 
@@ -710,8 +710,6 @@ Remember to move the **t1** file to the `intermediates` folder by "drag and drop
 
 ### 2. Freebayes
 
-INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
-
 Copy the latest version of the **Scaffold 6 Longranger Freebayes Polish** workflow from VGP tools into your project as explained before.
 
 ![Longranger Freebayes workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/longranger_freebayes_workflow.png)
@@ -791,8 +789,6 @@ Move the **final primary and alternative assembly** files to the `assembly_vgp_s
 
 ## Final Checks
 
-INSERT A BRIEF SECTION WITH SOME FINAL CHECKS <--- !!
-
 The final folder structure should look like this:
 
 ```
@@ -839,4 +835,10 @@ fArcCen1
 ```
 
 The required QV value can be obtained from `qv_report.txt` file in the `longranger_freebayes_round_2/QV` folder.
+
+Finally, it is requested a HiC heatmap before sending the genome to curation. Evaluation-Align HiC / Pretext / HiC heatmaps.
+
+Once all is finished, please share your genome stats and plots in the [Slack channel](https://genomeark.slack.com/archives/CE7FU8YAC).
+
+
 

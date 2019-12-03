@@ -144,15 +144,15 @@ IMPORTANT: All work should be done in the project shared with you. Do **not** cr
 
 FALCON and FALCON-Unzip are _de novo_ genome assemblers for PacBio long reads (for more information, click [here](https://pb-falcon.readthedocs.io/en/latest/about.html#overview)).
 
-Since the Falcon workflow needs an estimated genome size, and it is useful to estimate some other properties of the genome before starting, you must first run the **_Jellyfish and GenomeScope_** applet.
+Since the Falcon workflow needs an estimated genome size, and it is useful to know some other properties of the genome before starting, you must first run the **_Jellyfish and GenomeScope_** applet.
 
 To do this correctly, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the applet, under `Workflow Actions`, select `Set Output Folder`, and create a folder named `assembly_vgp_standard_1.6`. Inside that new folder, create a folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
 
 Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the applet, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
 
-**!)** In addition to the genome size, it is useful to take a look to other results in the GenomeScope results plot (e.g. heterozygosity percentage).
+**!)** In addition to the genome size, it is useful to take a look to other values in the GenomeScope results plot (e.g. heterozygosity percentage).
 
-Now, to start with the assembly workflow, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
+Now, to formally start with the assembly workflow, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project (the latest version of the workflows and applets should allways be in the main _VGP tools_ folder, make sure not use archived versions).
 
 ![DNAnexus working project](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNA_nexus_front.png)
 

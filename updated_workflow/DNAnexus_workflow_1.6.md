@@ -148,6 +148,8 @@ Click the green button `+ Add Data` and search and select **VGP Tools** in the "
 
 ![DNAnexus working project](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNA_nexus_front.png)
 
+<br/>
+
 In your working project, click the workflow to open it in _Run_ mode.
 
 ![Falcon and unzip workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/falcon_unzip_workflow.png)

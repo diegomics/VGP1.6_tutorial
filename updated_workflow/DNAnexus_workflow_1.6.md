@@ -38,7 +38,7 @@ The overall assembly pipeline can be depicted in the following simplified diagra
 ![DNAnexus assembly diagram 1.6](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNAnexus_VGP_1.6_diagram_25112019.png)
 
 
-Index:
+**Index:**
 
 . [Getting Started](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#getting-started)
 

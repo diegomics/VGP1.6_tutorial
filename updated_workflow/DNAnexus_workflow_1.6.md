@@ -150,6 +150,18 @@ To do this correctly, first the barcodes from the 10X reads have to be removed. 
 
 Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the applet, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
 
+At these stage, the final folder structure should look in general like this:
+```
+fArcCen1
+├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   └── genomescope
+│       └── ...
+└── genomic_data
+    └── ...
+```
+
 **!)** In addition to the genome size, it is useful to take a look to other values in the GenomeScope results plot (e.g. heterozygosity percentage).
 
 Now, to formally start with the assembly workflow, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project (the latest version of the workflows and applets should allways be in the main _VGP tools_ folder, make sure not use archived versions).
@@ -201,6 +213,10 @@ The final output should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       └── falcon_unzip
 │           ├── bam_to_fasta
@@ -287,7 +303,7 @@ fArcCen1
 │               ├── cns_p_ctg.fasta.gz
 │               └── cns_p_ctg.fastq.gz
 └── genomic_data
-
+    └── ...
 ```
 
 The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz`) and the **Alternate haplotigs**  (`cns_h_ctg.fasta.gz`), which will be used in the following steps of the assembly pipeline.
@@ -301,16 +317,18 @@ The final folder structure should look like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
+│   ├── edited_reads
+│   │   └── ...
+│   ├── genomescope
+│   │   └── ...
 │   └── intermediates
 │       ├── falcon_unzip
 │       │   └── ...
 │       ├── fArcCen1_c1.fasta.gz
 │       └── fArcCen1_c2.fasta.gz
 └── genomic_data
+    └── ...
 ```
-
-**RUNNING _Jellyfish and GenomeScope_:** To run this workflow correctly, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
-Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
 
 **Transfering to S3:** After being sure that each step finished correctly, the stats were checked and the files placed in their respective correct folders, it is a good practice to move the data to the VGP storage in AWS. The data will transfer and a symbolic link will be created to keep files functional and accesible. 
 In your working project, click the menu "TOOLS" and select "Tool Library", next search and select the applet **DNAnexus to VGP S3 Exporter**. Select the files generated in the finished step in order to transfer them.

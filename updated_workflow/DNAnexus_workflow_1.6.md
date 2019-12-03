@@ -136,7 +136,11 @@ Tags: Flier Cyclid
 
 IMPORTANT: All work should be done in the project shared with you. Do **not** create a new project to work in.
 
-## Falcon and Unzip Assembly
+<br/>
+
+## Assembly
+
+### 1. Falcon and Unzip
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WHICH STAGES IT HAS <--- !!
 
@@ -301,10 +305,9 @@ Once the task is finished, click the green button `Start Analysis` and search th
 **Transfering to S3:** After being sure that each step finished correctly, the stats were checked and the files placed in their respective correct folders, it is a good practice to move the data to the VGP storage in AWS. The data will transfer and a symbolic link will be created to keep files functional and accesible. 
 In your working project, click the menu "TOOLS" and select "Tool Library", next search and select the applet **DNAnexus to VGP S3 Exporter**. Select the files generated in the finished step in order to transfer them.
 
+<br/>
 
-## Scaffolding
-
-### 1. Purge Dups
+### 2. Purge Dups
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 
@@ -360,8 +363,11 @@ When comparing the plot obtained por _c1c2_ and for _p1q2_ you should see an imp
 
 Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** are present in the `intermediates` folder but the `bam_to_fasta` folder is not present, you should run the applet **PacBio BAM to FASTA** which can be found by clicking the green button `Start Analysis`. The input of this applet are the _PacBio Sequel Reads_ from the `pacbio` folder and you should set up an output folder named `bam_to_fasta` inside the `intermediates` folder.
 
+<br/>
 
-## 2. 10X scaffolding
+## Scaffolding
+
+## 1. 10X
 
 The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -403,7 +409,9 @@ fArcCen1
 The output under `round2/scaffolds.fasta.gz` corresponds to `fArcCen1_s1.fasta.gz` using the VGP naming convention.
 Remember to move the `s1` file to the `intermediates` folder by "drag and drop".
 
-## 3. Bionano Hybrid Scaffolding
+<br/>
+
+## 2. Bionano
 
 The next step uses the Bionano assembled CMAP data together with the scaffolds file `fArcCen1_s1.fasta.gz` from the previous step to perform hybrid scaffolding on the primary haplotig.
 
@@ -475,8 +483,9 @@ fArcCen1
 
 Remember to move the **s2** file to the `intermediates` folder by "drag and drop".
 
+<br/>
 
-## 4. Salsa Scaffolding
+## 3. Salsa
 
 Salsa scaffolding uses Hi-C data to scaffold the hybrid assembly from Bionano. Take a look at the HiC input data: It will be located under the `genomic_data` folder with the name of the HiC provider who generated it, such as `phase`, `arima` or `dovetail`.
 
@@ -553,7 +562,11 @@ fArcCen1
 
 Remember to move the **s3** and **s4** files to the `intermediates` folder by "drag and drop".
 
-## 5. Arrow Polishing
+<br/>
+
+## Polishing
+
+## 5. Arrow
 
 The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -608,9 +621,9 @@ fArcCen1
 
 Remember to move the **t1** file to the `intermediates` folder by "drag and drop".
 
+<br/>
 
-
-## 6. Freebayes Polishing
+## 6. Freebayes
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 
@@ -682,6 +695,7 @@ Remember to move the **t2** and **t3** files to the `intermediates` folder by "d
 
 Move the **final primary and alternative assembly** files to the `assembly_vgp_standard_1.6` folder by "drag and drop".
 
+<br/>
 
 ## Final Checks
 

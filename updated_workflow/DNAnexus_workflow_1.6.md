@@ -144,15 +144,15 @@ IMPORTANT: All work should be done in the project shared with you. Do **not** cr
 
 FALCON and FALCON-Unzip are _de novo_ genome assemblers for PacBio long reads (for more information, click [here](https://pb-falcon.readthedocs.io/en/latest/about.html#overview)).
 
-Since the Falcon workflow needs an estimated genome size, and it is useful to estimate some other properties before starting, you must first run the **_Jellyfish and GenomeScope_** applet.
+Since the Falcon workflow needs an estimated genome size, and it is useful to estimate some other properties of the genome before starting, you must first run the **_Jellyfish and GenomeScope_** applet.
 
 To do this correctly, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the applet, under `Workflow Actions`, select `Set Output Folder`, and create a folder named `assembly_vgp_standard_1.6`. Inside that new folder, create a folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
 
 Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the applet, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
 
-**!)** In addition to the genome size, it is useful to take a look to other results in the GenomeScope results plot (e.g. heterozygosity percentage)
+**!)** In addition to the genome size, it is useful to take a look to other results in the GenomeScope results plot (e.g. heterozygosity percentage).
 
-Now, to start with the assembly workflow, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
+Now, to start with the assembly workflow, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 ![DNAnexus working project](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/DNA_nexus_front.png)
 
@@ -309,7 +309,7 @@ fArcCen1
 └── genomic_data
 ```
 
-**RUNNING _Jellyfish and GenomeScope_:** To run this workflow correctly, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
+**RUNNING _Jellyfish and GenomeScope_:** To run this workflow correctly, first the barcodes from the 10X reads have to be removed. In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **proc10xg** applet. Click the applet to open it in _Run_ mode. For the input files, select all the `fastq.gz` in the `10x` folder. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `edited_reads`. Finally, click `Run as Analysis...` to launch the applet.
 Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the workflow, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
 
 **Transfering to S3:** After being sure that each step finished correctly, the stats were checked and the files placed in their respective correct folders, it is a good practice to move the data to the VGP storage in AWS. The data will transfer and a symbolic link will be created to keep files functional and accesible. 
@@ -319,7 +319,7 @@ In your working project, click the menu "TOOLS" and select "Tool Library", next 
 
 ### 2. Purge Dups
 
-In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 1 purge_dups** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
+In your working project, click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **Scaffold 1 purge_dups** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 Click the workflow to open it in _Run_ mode and create an editable copy of it in case anything is misconfigured or needs to be re-run.
 
@@ -361,7 +361,7 @@ fArcCen1
 The **Purged primary** contigs should be contained in the file `fArcCen1_p1.fasta.gz`, and the **Alternate combined** haplotigs should be contained in the `fArcCen1_q2.fasta.gz` file.
 Remember to move the `p1` and `q2` files to the `intermediates` folder by "drag and drop".
 
-**!)** At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far. To do this, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the applets named `asm_stats` and `busco`, and the workflow named `Evaluation KAT Plot`.
+**!)** At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far. To do this, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the applets named `asm_stats` and `busco`, and the workflow named `Evaluation KAT Plot`.
 To obtain the standard assembly statistics run the `asm_stats` applet using as input the respective assembly to be evaluated. In addition, click the gear icon and complete the "Genome size (bp)" field with the size of the genome in base pairs, and `fArcCen1` in the "species code" field. Inside the `assembly_vgp_standard_1.6` folder, create a new folder with the name `evaluation`. Create a folder inside `evaluation` with the name of the assembly stage to be evaluated (for example, `c1`) and select it as the output folder. Finally, click `Run as Analysis...` to launch the applet.
 You should check for an improvement in the assembly metrics with the progress of the pipeline.
 To obtain a measure of the completeness of the assembly it is necessary to run **busco** using as input the respective assembly to be evaluated. In addition, click the gear icon and complete the "Augustus species search" filed with the closest species available to your working species, in this example `zebrafish`. Finally, under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `purge_dups` inside the `intermediates` folder and select it as the output folder for the **busco** applet.
@@ -377,7 +377,7 @@ Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** a
 
 ### 1. 10X
 
-The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
+The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 The inputs for the workflow are:
 * `assemble_genome_fastagz`: the _Purged primary_ contigs file **p1** from Purge Dups (`fArcCen1_p1.fasta.gz`)
@@ -517,7 +517,7 @@ fArcCen1
 In addition to the input files, you will need to know the restriction enzymes used to generate the data. For `fArcCen1`,
 the sequences are `GATC` since the restriction enzyme employed was MboI.
 
-Copy the last version of the **scaffold_4_salsa** workflow from VGP tools into your project as explained before. The workflow performs the following steps:
+Copy the latest version of the **scaffold_4_salsa** workflow from VGP tools into your project as explained before. The workflow performs the following steps:
 
 1. Align the _HiC reads_ using the Arima mapping pipeline
 2. Run _Salsa2_ on aligned reads and the `s2.fasta.gz` scaffolds file
@@ -576,7 +576,7 @@ Remember to move the **s3** and **s4** files to the `intermediates` folder by "d
 
 ### 1. Arrow
 
-The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
+The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
 The workflow performs the following steps:
 1. Align the _PacBio reads_ to the assembly using _Minimap2_
@@ -635,7 +635,7 @@ Remember to move the **t1** file to the `intermediates` folder by "drag and drop
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 
-Copy the last version of the **Scaffold 6 Longranger Freebayes Polish** workflow from VGP tools into your project as explained before.
+Copy the latest version of the **Scaffold 6 Longranger Freebayes Polish** workflow from VGP tools into your project as explained before.
 
 ![Longranger Freebayes workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/longranger_freebayes_workflow.png)
 
@@ -748,3 +748,4 @@ fArcCen1
 ```
 
 The required QV value can be obtained from `qv_report.txt` file in the `longranger_freebayes_round_2/QV` folder.
+

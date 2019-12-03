@@ -142,7 +142,7 @@ IMPORTANT: All work should be done in the project shared with you. Do **not** cr
 
 ### 1. Falcon and Unzip
 
-INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WHICH STAGES IT HAS <--- !!
+FALCON and FALCON-Unzip are _de novo_ genome assemblers for PacBio long reads (for more information, click [here](https://pb-falcon.readthedocs.io/en/latest/about.html#overview)).
 
 Click the green button `+ Add Data` and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **vgp_falcon_and_unzip_assembly_workflow** and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 

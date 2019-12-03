@@ -365,7 +365,6 @@ Note: if the _Falcon and Unzip_ step was already run and the **c1** and **c2** a
 
 ## Scaffolding
 
-
 ### 1. 10X
 
 The next step of the pipeline consist in two rounds of scaffolding using the 10X Genomics raw reads. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **scaffold_2_scaff10X** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.

@@ -46,7 +46,7 @@ The overall assembly pipeline can be depicted in the following simplified diagra
 
 . [Purge Dups](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#1-purge-dups)
 
-. [10X scaffolding](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#2-10x-scaffolding)
+. [10X Scaffolding](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#2-10x-scaffolding)
 
 . [Bionano Hybrid Scaffolding](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#3-bionano-hybrid-scaffolding)
 
@@ -564,7 +564,7 @@ Remember to move the **s3** and **s4** files to the `intermediates` folder by "d
 
 ## Polishing
 
-### 5. Arrow
+### 1. Arrow
 
 The next step of the pipeline consist in a polishing of the scaffolds using PacBio data. To start, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the last version of the **Scaffold 5 Arrow Polish** workflow and click the green button `Add Data`, after which a dialogue box will pop up with a progress bar indicating that the workflow has been copied to the current location of your working project.
 
@@ -621,7 +621,7 @@ Remember to move the **t1** file to the `intermediates` folder by "drag and drop
 
 <br/>
 
-### 6. Freebayes
+### 2. Freebayes
 
 INSERT A BRIEF EXPLANATION ABOUT WHAT THIS STEP DOES AND WICH STAGES HAS <--- !!
 

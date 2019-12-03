@@ -62,6 +62,7 @@ The overall assembly pipeline can be depicted in the following simplified diagra
 IMPORTANT: Remember that your questions are always welcome in the ["training" channel of Slack](https://genomeark.slack.com/archives/CE7FU8YAC)!
 
 <br/>
+
 ## Getting Started
 
 When assigned an assembly, you will be given a **Species ID** for your given genome (in this example _**fArcCen1**_) and a project will be shared with you containing the raw files for the genome which have been linked from the VGP AWS bucket.

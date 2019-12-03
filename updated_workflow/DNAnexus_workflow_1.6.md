@@ -173,6 +173,8 @@ In your working project, click the workflow to open it in _Run_ mode.
 
 ![Falcon and unzip workflow](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/images/falcon_unzip_workflow.png)
 
+<br/>
+
 Before configuring the workflow, it is good practice to create an editable copy of the workflow in case anything is misconfigured or needs to be re-run. This can be done by selecting `Workflow Actions` and then selecting the `Save as template` action. This will take you to a copy of the workflow that can be modified. Workflows are automatically saved if any changes are made. Return to the `Run Analysis...` screen by clicking the `Start Analysis` button.
 
 ![Workflow Actions: Save as Template](https://raw.githubusercontent.com/VGP/vgp-assembly/master/tutorials/images/WorkflowSaveAsTemplate.png)

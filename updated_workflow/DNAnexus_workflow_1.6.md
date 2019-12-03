@@ -150,7 +150,7 @@ To do this correctly, first the barcodes from the 10X reads have to be removed. 
 
 Once the task is finished, click the green button `Start Analysis` and search the **Jellyfish and GenomeScope** applet. For the input files, select all the `fastq.gz` in the `edited_reads` folder. Next, click the gear icon to open the parameters panel and set a k-mer length of `31`. To specify an output folder for the applet, under `Workflow Actions`, select `Set Output Folder`, navigate to the `assembly_vgp_standard_1.6` and create a new folder named `genomescope`. Finally, click `Run as Analysis...` to launch the applet.
 
-At these stage, the final folder structure should look in general like this:
+At this stage, the final folder structure should look in general like this:
 ```
 fArcCen1
 ├── assembly_vgp_standard_1.6
@@ -311,6 +311,20 @@ The `unzip_stage_5` folder contains the **Primary contigs** (`cns_p_ctg.fasta.gz
 These two files must be renamed using the convention of the VGP pipeline. To do this, first select the respective file and then click the pencil button that appears at the right to edit the name. In this example the name should be `fArcCen1_c1.fasta.gz` for the **Primary contigs** file, and `fArcCen1_c2.fasta.gz` for the **Alternate haplotigs** file.
 
 Next, it is required that every intermediate assembly produced during the pipeline is placed in a specific folder. Move the **c1** and **c2** files to the `intermediates` folder by "drag and drop".
+
+<br/>
+
+**!)** At this point of the pipeline it is important to run several assembly metrics to check that all is going well so far, a practice that is repeated after finalizing each step (see the [DNAnexus workflow diagram](https://github.com/lunfardista/VGP1.6_tutorial/blob/master/updated_workflow/DNAnexus_workflow_1.6.md#farccen1-assembly-tutorial) at the beginning of the tutorial). To do this, click the green button `+ Add Data` in your working project and search and select **VGP Tools** in the "Other Project" tab. Search and select the latest version of the applets named **asm_stats** and **busco**, and the workflow named **Evaluation KAT Plot**.
+
+To obtain the standard assembly statistics run the **asm_stats** applet using as input the respective assembly to be evaluated. In addition, click the gear icon and complete the "Genome size (bp)" field with the size of the genome in base pairs, and `fArcCen1` in the "species code" field. Inside the `assembly_vgp_standard_1.6` folder, create a new folder with the name `evaluation`. Create a folder inside `evaluation` with the name of the assembly stage to be evaluated (for example, `c1`) and select it as the output folder. Finally, click `Run as Analysis...` to launch the applet.
+You should check for an improvement in the assembly metrics with the progress of the pipeline.
+
+To obtain a measure of the completeness of the assembly it is necessary to run **busco** using as input the respective assembly to be evaluated. In addition, click the gear icon and complete the "Augustus species search" filed with the closest species available to your working species, in this example `zebrafish`. Finally, under `Workflow Actions`, select `Set Output Folder`. Create a new folder with the name `purge_dups` inside the `intermediates` folder and select it as the output folder for the **busco** applet.
+You should check for an improvement in the metrics with the progress of the pipeline.
+
+To run the **Evaluation KAT Plot** workflow, select reads in the `10x` folder as input for the `Remove gembarcodes from 10x reads` stage, and the **c1** and **c2** assemblies as input for the `File Concatenator` stage. For setting the output, create a folder named `KAT_c1c2` inside the `evaluation` folder. Finally, click `Run as Analysis...` to launch the workflow.
+You will compare the obtained plot with subsequent steps of the pipeline.
+
 
 The final folder structure should look like this:
 
